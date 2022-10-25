@@ -17,6 +17,7 @@ function Header() {
           </div>
           <div className="spanRight">
             <span>Hello, user.</span>
+            {/* <button className="custButton">Log Out</button> */}
           </div>
         </div>
       </nav>
