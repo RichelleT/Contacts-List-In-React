@@ -29,7 +29,7 @@ function Contacts() {
                 <div className="row">
                   <div className="col-4 circleImgSrc">
                     <img src={defImg} alt="None"></img>
-                    {/* fix image && responsive later */}
+                    {/* ⁡⁢⁣⁢𝗳𝗶𝘅 𝗶𝗺𝗮𝗴𝗲 && 𝗿𝗲𝘀𝗽𝗼𝗻𝘀𝗶𝘃𝗲 𝗹𝗮𝘁𝗲𝗿⁡ */}
                   </div>
                   <div className="col-8">
                     <h5 className="card-title">Name</h5>
@@ -64,7 +64,7 @@ function Contacts() {
           </div>
         </div>
       </div>
-      {/* current banner not floating; make it float */}
+      {/* ⁡⁢⁣⁢𝗰𝘂𝗿𝗿𝗲𝗻𝘁 𝗯𝗮𝗻𝗻𝗲𝗿 𝗻𝗼𝘁 𝗳𝗹𝗼𝗮𝘁𝗶𝗻𝗴; 𝗺𝗮𝗸𝗲 𝗶𝘁 𝗳𝗹𝗼𝗮𝘁⁡ */}
       <div className="banner">
         <div className="row d-flex align-items-center">
           <div className="col-4">
