@@ -45,17 +45,23 @@ function Contacts() {
                 <div className="row d-flex align-items-center justify-content-around">
                   <div className="col-3">
                     <button className="iconBtn">
-                      <i class="bi bi-eye"></i>
+                      <i
+                        class="bi bi-eye"
+                        title="View full details of contact"
+                      ></i>
                     </button>
                   </div>
                   <div className="col-3">
                     <button className="iconBtn">
-                      <i class="bi bi-dash-circle"></i>
+                      <i class="bi bi-dash-circle" title="Delete contact"></i>
                     </button>
                   </div>
                   <div className="col-3">
                     <button className="iconBtn">
-                      <i class="bi bi-three-dots"></i>
+                      <i
+                        class="bi bi-three-dots"
+                        title="Edit contact details"
+                      ></i>
                     </button>
                   </div>
                 </div>
@@ -64,12 +70,12 @@ function Contacts() {
           </div>
         </div>
       </div>
-      {/* ⁡⁢⁣⁢𝗰𝘂𝗿𝗿𝗲𝗻𝘁 𝗯𝗮𝗻𝗻𝗲𝗿 𝗻𝗼𝘁 𝗳𝗹𝗼𝗮𝘁𝗶𝗻𝗴; 𝗺𝗮𝗸𝗲 𝗶𝘁 𝗳𝗹𝗼𝗮𝘁⁡ */}
+      {/* ⁡⁢⁣⁢𝗰𝘂𝗿𝗿𝗲𝗻𝘁 𝗯𝗮𝗻𝗻𝗲𝗿 𝗻𝗼𝘁 𝗳𝗹𝗼𝗮𝘁𝗶𝗻𝗴; 𝗺𝗮𝗸𝗲 𝗶𝘁 𝗳𝗹𝗼𝗮𝘁⁡ ⁡⁢⁣⁢&& 𝗳𝗶𝘅 𝗮𝗹𝗶𝗴𝗻𝗺𝗲𝗻𝘁⁡ */}
       <div className="banner">
-        <div className="row d-flex align-items-center">
+        <div className="row">
           <div className="col-4">
             <button className="btnIcon">
-              <i class="bi bi-star"></i>
+              <i class="bi bi-star" title="Add to favourite"></i>
             </button>
           </div>
           <div className="col-4">
@@ -77,7 +83,7 @@ function Contacts() {
           </div>
           <div className="col-4">
             <button className="btnIcon">
-              <i class="bi bi-arrow-counterclockwise"></i>
+              <i class="bi bi-arrow-counterclockwise" title="Refresh joke"></i>
             </button>
           </div>
         </div>
