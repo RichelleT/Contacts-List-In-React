@@ -5,6 +5,7 @@ import "../../styles/contacts.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Contacts() {
+  const defImg = require("../../assets/defAvatarImg.png");
   return (
     <div>
       <Header />
@@ -25,55 +26,552 @@ function Contacts() {
           <div className="col-3">
             <div className="card w-100">
               <div className="card-body">
-                <h5 className="card-title">Name</h5>
-                <p className="card-text">Description</p>
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          {/* delete here */}
           <div className="col-3">
             <div className="card w-100">
               <div className="card-body">
-                <h5 className="card-title">Name</h5>
-                <p className="card-text">Description</p>
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="col-3">
             <div className="card w-100">
               <div className="card-body">
-                <h5 className="card-title">Name</h5>
-                <p className="card-text">Description</p>
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="col-3">
             <div className="card w-100">
               <div className="card-body">
-                <h5 className="card-title">Name</h5>
-                <p className="card-text">Description</p>
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="col-3">
             <div className="card w-100">
               <div className="card-body">
-                <h5 className="card-title">Name</h5>
-                <p className="card-text">Description</p>
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="col-3">
             <div className="card w-100">
               <div className="card-body">
-                <h5 className="card-title">Name</h5>
-                <p className="card-text">Description</p>
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          {/* delete till here */}
+          <div className="col-3">
+            <div className="card w-100">
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="card w-100">
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="card w-100">
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="card w-100">
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="card w-100">
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="card w-100">
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="card w-100">
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="card w-100">
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-4 circleImgSrc">
+                    <img src={defImg} alt="None"></img>
+                    {/* fix image && responsive later */}
+                  </div>
+                  <div className="col-8">
+                    <h5 className="card-title">Name</h5>
+                    <p className="card-text">Default Contact Number</p>
+                  </div>
+                </div>
+                <hr />
+                <details>
+                  Specific Address
+                  <summary>Address</summary>
+                </details>
+                <hr />
+                <div className="row d-flex align-items-center justify-content-around">
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                  </div>
+                  <div className="col-3">
+                    <button className="iconBtn">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div className="banner">Trying Banner && Testing scroll</div>
     </div>
   );
 }
