@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Home from "./components/home/Home";
+import Landing from "./components/landing/Landing";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       {/* add routes, header, footer, & toastcontainer in here */}
       <Routes>
-        <Route path="/" exact element={<Home />} />
+        <Route path="/" exact element={<Landing />} />
       </Routes>
     </div>
   );
