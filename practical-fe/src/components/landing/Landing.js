@@ -13,7 +13,7 @@ function Landing() {
 
   return (
     <div className="container pt-auto custMt">
-      <div className="row d-flex justify-content-center">
+      <div className="row d-flex">
         <div className="col-6">
           <div className="custTitle">Sign In</div>
           <div className="contBody">
