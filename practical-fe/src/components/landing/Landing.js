@@ -5,7 +5,17 @@ function Landing() {
   return (
     <div>
       <Header />
-      <div>Landing</div>
+      <div>
+        <div className="container">
+          <div className="container-left">
+            <form>
+              <label>Username</label>
+              <input type="text"></input>
+              <button>Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
