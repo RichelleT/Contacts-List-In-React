@@ -1,6 +1,6 @@
 import React from "react";
 // import styles & components
-import Header from "../../common/header/Header";
+import Header from "../common/header/Header";
 import "../../styles/contacts.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
