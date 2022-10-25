@@ -14,7 +14,7 @@ function App() {
       {/* add routes, header, footer, & toastcontainer in here */}
       <Routes>
         <Route path="/" exact element={<Landing />} />
-        <Route path="/Contacts" element={<Contacts />} />
+        <Route path="/contacts" element={<Contacts />} />
       </Routes>
     </div>
   );
