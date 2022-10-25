@@ -1,8 +1,7 @@
 import * as React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-// import styles
+// import styles & components
 import "./App.css";
-// import components
 import Landing from "./components/landing/Landing";
 import Contacts from "./components/contacts/Contacts";
 

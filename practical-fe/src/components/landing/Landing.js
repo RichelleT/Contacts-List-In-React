@@ -10,11 +10,12 @@ function Landing() {
     event.preventDefault();
     navigate("/contacts");
   };
+
   return (
     <div className="container pt-auto custMt">
       <div className="row d-flex justify-content-center">
         <div className="col-6">
-          <div>Sign In</div>
+          <div className="custTitle">Sign In</div>
           <div className="contBody">
             <form onSubmit={handleSubmit}>
               <label>Username</label>
