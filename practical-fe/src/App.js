@@ -1,6 +1,10 @@
 import * as React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+// import styles
+import "./App.css";
+// import components
 import Landing from "./components/landing/Landing";
+import Contacts from "./components/contacts/Contacts";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
@@ -10,6 +14,7 @@ function App() {
       {/* add routes, header, footer, & toastcontainer in here */}
       <Routes>
         <Route path="/" exact element={<Landing />} />
+        <Route path="/Contacts" element={<Contacts />} />
       </Routes>
     </div>
   );
