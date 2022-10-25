@@ -9,7 +9,7 @@ function Contacts() {
   return (
     <div>
       <Header />
-      <div className="container">
+      <div className="container noBorder">
         <div className="row">
           <div className="col-6">
             <h2>Contacts List</h2>
@@ -21,7 +21,7 @@ function Contacts() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container noBorder">
         <div className="row row-cols-1 row-cols-md-4">
           <div className="col-3">
             <div className="card w-100">
