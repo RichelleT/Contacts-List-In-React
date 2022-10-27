@@ -16,7 +16,7 @@ function Contacts() {
           </div>
           <div className="col-6 d-flex justify-content-end">
             <button className="iconBtn">
-              <i class="bi bi-plus-circle fs-5"></i>
+              <i className="bi bi-plus-circle fs-5"></i>
             </button>
           </div>
         </div>
@@ -46,20 +46,23 @@ function Contacts() {
                   <div className="col-3">
                     <button className="iconBtn">
                       <i
-                        class="bi bi-eye"
+                        className="bi bi-eye"
                         title="View full details of contact"
                       ></i>
                     </button>
                   </div>
                   <div className="col-3">
                     <button className="iconBtn">
-                      <i class="bi bi-dash-circle" title="Delete contact"></i>
+                      <i
+                        className="bi bi-dash-circle"
+                        title="Delete contact"
+                      ></i>
                     </button>
                   </div>
                   <div className="col-3">
                     <button className="iconBtn">
                       <i
-                        class="bi bi-three-dots"
+                        className="bi bi-three-dots"
                         title="Edit contact details"
                       ></i>
                     </button>
@@ -75,7 +78,7 @@ function Contacts() {
         <div className="row">
           <div className="col-4">
             <button className="btnIcon">
-              <i class="bi bi-star" title="Add to favourite"></i>
+              <i className="bi bi-star" title="Add to favourite"></i>
             </button>
           </div>
           <div className="col-4">
@@ -83,7 +86,10 @@ function Contacts() {
           </div>
           <div className="col-4">
             <button className="btnIcon">
-              <i class="bi bi-arrow-counterclockwise" title="Refresh joke"></i>
+              <i
+                className="bi bi-arrow-counterclockwise"
+                title="Refresh joke"
+              ></i>
             </button>
           </div>
         </div>
