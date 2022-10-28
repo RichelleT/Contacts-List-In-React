@@ -12,8 +12,9 @@
 }
 
 .contBody {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
+  display: block;
   margin-top: auto;
   justify-content: flex-end;
   height: 250px;

@@ -19,13 +19,10 @@ function Landing() {
           <div className="contBody">
             <form onSubmit={handleSubmit}>
               <label>Username</label>
-              <br />
+
               <input className="custInputT" type="text"></input>
-              <br />
-              <br />
+
               <button className="custButton">Enter</button>
-              <br />
-              <br />
             </form>
           </div>
         </div>

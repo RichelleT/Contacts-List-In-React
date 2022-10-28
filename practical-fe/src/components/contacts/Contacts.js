@@ -6,6 +6,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Contacts() {
   const defImg = require("../../assets/defAvatarImg.png");
+
   return (
     <div>
       <Header />
