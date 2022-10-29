@@ -3,8 +3,10 @@ import React from "react";
 import Header from "../common/header/Header";
 import "../../styles/contacts.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { useNavigate } from "react-router-dom";
 
 function Contacts() {
+  let navigate = useNavigate();
   const defImg = require("../../assets/defAvatarImg.png");
 
   return (
@@ -16,7 +18,10 @@ function Contacts() {
             <h2>Contacts List</h2>
           </div>
           <div className="col-6 d-flex justify-content-end">
-            <button className="iconBtn">
+            <button
+              className="iconBtn"
+              onClick={() => navigate("/contactsForm")}
+            >
               <i className="bi bi-plus-circle fs-5"></i>
             </button>
           </div>

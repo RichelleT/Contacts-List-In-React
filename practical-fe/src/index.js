@@ -7,13 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemeProvider } from "./components/common/theme/ThemeContext";
 import { Provider as ReduxProvider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
-
-const store = configureStore({
-  reducer: {
-    // contacts: [],
-  },
-});
+import { store } from "./redux/configStore";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
