@@ -1,14 +1,16 @@
-import React from "react";
+import * as React from "react";
 // import styles & components
 import "../../../styles/header.css";
+// import { ThemeContext } from "../theme/ThemeContext";
+// import ThemeToggler from "../theme/ThemeToggler";
 
 function Header() {
+  // const theme = React.useContext(ThemeContext);
+  // const darkMode = theme.state.darkMode;
+
   return (
     <div>
-      <nav
-        className="navbar navbar-light"
-        style={{ backgroundColor: "#e3f2fd" }}
-      >
+      <nav className="navbar">
         <div className="container-fluid">
           <div className="spanLeft">
             <a href="/" style={{ textDecoration: "none" }}>
@@ -17,6 +19,7 @@ function Header() {
           </div>
           <div className="spanRight">
             <span>Hello, user.</span>
+            {/* <ThemeToggler /> */}
             {/* <button className="custButton">Log Out</button> */}
           </div>
         </div>
