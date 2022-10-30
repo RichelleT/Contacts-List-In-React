@@ -3,7 +3,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 // import styles & components
 import "./App.css";
 import Landing from "./components/landing/Landing";
-import ContactsForm from "./components/contacts/ContactsForm";
+import Contacts from "./components/contacts/ContactsList";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
@@ -13,7 +13,7 @@ function App() {
       {/* add routes, header, footer, & toastcontainer in here */}
       <Routes>
         <Route path="/" exact element={<Landing />} />
-        <Route path="/contactsForm" element={<ContactsForm />} />
+        <Route path="/contacts" element={<Contacts />} />
       </Routes>
     </div>
   );

@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemeProvider } from "./components/common/theme/ThemeContext";
 import { Provider as ReduxProvider } from "react-redux";
-import { store } from "./redux/configStore";
+import { store } from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
