@@ -3,7 +3,6 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 // import styles & components
 import "./App.css";
 import Landing from "./components/landing/Landing";
-import Contacts from "./components/contacts/Contacts";
 import ContactsForm from "./components/contacts/ContactsForm";
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
       {/* add routes, header, footer, & toastcontainer in here */}
       <Routes>
         <Route path="/" exact element={<Landing />} />
-        <Route path="/contacts" element={<Contacts />} />
         <Route path="/contactsForm" element={<ContactsForm />} />
       </Routes>
     </div>
