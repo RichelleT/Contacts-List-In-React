@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 const TextInput = ({ name, label, onChange, placeholder, value, error }) => {
   let wrapperClass = "form-group";
   if (error && error.length > 0) {
+    // eslint-disable-next-line
     wrapperClass += " " + "has-error";
   }
 
@@ -31,7 +32,7 @@ TextInput.propTypes = {
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string,
-  error: PropTypes.string
+  error: PropTypes.string,
 };
 
 export default TextInput;
