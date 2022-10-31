@@ -29,8 +29,6 @@ export function EditContact() {
   const onSecAddressChanged = (event) => setSecAddress(event.target.value);
 
   const handleClick = () => {
-    console.log(contacts.id);
-    console.log(contactId);
     if (contacts.id === contactId) {
       if (name && mobileNum) {
         dispatch(
@@ -51,7 +49,6 @@ export function EditContact() {
         setMainAddress("");
         setSecAddress("");
         setId("");
-        console.log(name);
       }
       navigate("/contacts");
     }

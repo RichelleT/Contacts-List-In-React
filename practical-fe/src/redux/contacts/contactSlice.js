@@ -52,10 +52,7 @@ const contactSlice = createSlice({
         newArray[index].homeNum = homeNum;
         newArray[index].mainAddress = mainAddress;
         newArray[index].secAddress = secAddress;
-        console.log("newArray");
-        console.log(newArray);
-      } else {
-        console.log("wtf");
+        console.log(JSON.stringify(newArray));
       }
     },
   },

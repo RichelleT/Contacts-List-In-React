@@ -1,3 +1,4 @@
+import * as React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "../common/header/Header";
 import "../../styles/contacts.css";
@@ -13,9 +14,20 @@ const ContactsList = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const contacts = useSelector(selectAllContact);
-  console.log(contacts);
 
-  const renderContacts = contacts.map((contact) => (
+  const [lsContactArray, setLsContactArray] = React.useState([]);
+
+  console.log("contacts");
+  console.log(contacts);
+  console.log("lsContactArray");
+  console.log(lsContactArray);
+
+  React.useEffect(() => {
+    localStorage.setItem("lscontacts", JSON.stringify(contacts));
+    setLsContactArray(JSON.parse(localStorage.getItem("lscontacts")));
+  }, [contacts]);
+
+  const renderContacts = lsContactArray.map((contact) => (
     <>
       <div className="col-3 mt-5">
         <div className="card w-100">

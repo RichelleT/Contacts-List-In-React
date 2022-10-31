@@ -1,5 +1,4 @@
 import * as React from "react";
-// import styles & components
 import "../../../styles/header.css";
 import RenameModal from "../RenameModal";
 // import { ThemeContext } from "../theme/ThemeContext";
