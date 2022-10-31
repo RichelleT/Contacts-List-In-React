@@ -13,7 +13,6 @@ function App() {
   let navigate = useNavigate();
   return (
     <div className="App">
-      {/* add routes, header, footer, & toastcontainer in here */}
       <Routes>
         <Route path="/" exact element={<Landing />} />
         <Route path="/contacts" element={<ContactsList />} />

@@ -55,25 +55,35 @@ const ContactsList = () => {
             </div>
             <hr />
             <details>
-              {contact.mainAddress.length > 0 && (
-                <>
-                  <b>Main Address:</b> <br />
-                  {contact.mainAddress}
-                </>
-              )}
-              {contact.secAddress.length > 0 && (
-                <>
-                  <br />
-                  <b>Secondary Address:</b> <br />
-                  {contact.secAddress}
-                </>
-              )}
+              {contact.mainAddress.length > 0 &&
+                contact.secAddress.length === 0 && (
+                  <>
+                    <b>Main Address:</b> <br />
+                    {contact.mainAddress}
+                  </>
+                )}
+              {contact.secAddress.length > 0 &&
+                contact.mainAddress.length === 0 && (
+                  <>
+                    <b>Secondary Address:</b> <br />
+                    {contact.secAddress}
+                  </>
+                )}
               {contact.secAddress.length === 0 &&
                 contact.mainAddress.length === 0 && (
                   <>
                     <b>No Address Added</b> <br />
                   </>
                 )}
+              {contact.secAddress.length > 0 && contact.mainAddress.length > 0 && (
+                <>
+                  <b>Main Address:</b> <br />
+                  {contact.mainAddress}
+                  <br />
+                  <b>Secondary Address:</b> <br />
+                  {contact.secAddress}
+                </>
+              )}
               <summary>Addresses</summary>
             </details>
             <hr />
@@ -99,16 +109,26 @@ const ContactsList = () => {
                     dispatch(removeContact(contact.id));
                   }}
                 >
-                  <i className="bi bi-dash-lg" title="Delete contact"></i>
+                  <i
+                    className="bi bi-dash-lg red"
+                    style={{ color: "red" }}
+                    title="Delete contact"
+                  ></i>
                 </button>
               </div>
               <div className="col-3">
-                <button className="iconBtn">
+                <Link to={`/contact/edit/${contact.id}`}>
                   <i
                     className="bi bi-three-dots"
                     title="Edit contact details"
                   ></i>
-                </button>
+                </Link>
+                {/* <button className="iconBtn">
+                  <i
+                    className="bi bi-three-dots"
+                    title="Edit contact details"
+                  ></i>
+                </button> */}
               </div>
             </div>
           </div>
