@@ -83,47 +83,44 @@ function Header() {
           </div>
           <div className="spanRight">
             {!isOpen && <span>Hello, {userName}!&nbsp;</span>}
-            <div className="btnWrap">
-              {!isOpen && (
-                <button className="iconBtn" onClick={() => setIsOpen(true)}>
-                  <i
-                    class="bi bi-pencil-square fs-5"
-                    style={{ color: "#ff9999" }}
-                  ></i>
-                </button>
-              )}
-              <RenameModal open={isOpen} onClose={() => setIsOpen(false)}>
-                <form onSubmit={handleSubmit}>
-                  <label>
-                    <span>Enter new name</span>
-                    <br />
-                    <input
-                      type="text"
-                      placeholder="Name"
-                      onBlur={handleBlur}
-                      style={style(error)}
-                      ref={ref}
-                      onChange={handleChange}
-                      onFocus={handleFocus}
-                      pattern=".{4,15}"
-                      required
-                    />
-                    {showErrorText && (
-                      <p role="alert" style={{ color: "rgb(255, 0, 0)" }}>
-                        Please make sure username is between 4 and 15
-                        characters.
-                      </p>
-                    )}
-                    <br />
-                    <br />
-                    <button type="submit" className="updBtn">
-                      Update Name
-                    </button>{" "}
-                    <br />
-                  </label>
-                </form>
-              </RenameModal>
-            </div>
+            {!isOpen && (
+              <button className="iconBtn" onClick={() => setIsOpen(true)}>
+                <i
+                  class="bi bi-pencil-square fs-5"
+                  style={{ color: "#ff9999" }}
+                ></i>
+              </button>
+            )}
+            <RenameModal open={isOpen} onClose={() => setIsOpen(false)}>
+              <form onSubmit={handleSubmit}>
+                <label>
+                  <span>Enter new name</span>
+                  <br />
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    onBlur={handleBlur}
+                    style={style(error)}
+                    ref={ref}
+                    onChange={handleChange}
+                    onFocus={handleFocus}
+                    pattern=".{4,15}"
+                    required
+                  />
+                  {showErrorText && (
+                    <p role="alert" style={{ color: "rgb(255, 0, 0)" }}>
+                      Please make sure username is between 4 and 15 characters.
+                    </p>
+                  )}
+                  <br />
+                  <br />
+                  <button type="submit" className="updBtn">
+                    Update Name
+                  </button>{" "}
+                  <br />
+                </label>
+              </form>
+            </RenameModal>
             {/* <span>Hello, user.</span> */}
             {/* <ThemeToggler /> */}
             {/* <button className="custButton">Log Out</button> */}
