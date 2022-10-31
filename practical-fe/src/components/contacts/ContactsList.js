@@ -14,13 +14,7 @@ const ContactsList = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const contacts = useSelector(selectAllContact);
-
   const [lsContactArray, setLsContactArray] = React.useState([]);
-
-  console.log("contacts");
-  console.log(contacts);
-  console.log("lsContactArray");
-  console.log(lsContactArray);
 
   React.useEffect(() => {
     localStorage.setItem("lscontacts", JSON.stringify(contacts));
