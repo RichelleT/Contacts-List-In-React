@@ -87,8 +87,8 @@ const ContactsList = () => {
               <summary>Addresses</summary>
             </details>
             <hr />
-            <div className="row d-flex align-items-center justify-content-around">
-              <div className="col-3">
+            <div className="row d-flex align-items-center justify-content-between">
+              <div className="col-4">
                 <Link to={`/contact/${contact.id}`}>
                   <i
                     className="bi bi-eye"
@@ -96,7 +96,7 @@ const ContactsList = () => {
                   ></i>
                 </Link>
               </div>
-              <div className="col-3">
+              <div className="col-4">
                 <button
                   className="iconBtn"
                   onClick={() => {
@@ -110,7 +110,7 @@ const ContactsList = () => {
                   ></i>
                 </button>
               </div>
-              <div className="col-3">
+              <div className="col-4">
                 <Link to={`/contact/edit/${contact.id}`}>
                   <i
                     className="bi bi-three-dots"

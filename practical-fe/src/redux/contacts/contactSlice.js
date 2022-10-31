@@ -26,25 +26,28 @@ const contactSlice = createSlice({
         };
       },
     },
+
     clearAllContacts: (state) => {
       state.contacts = [];
     },
+
     removeContact: (state, action) => {
       const contactId = action.payload;
       state.contacts = state.contacts.filter((item) => item.id !== contactId);
     },
-    updateContact: (state, action) => {
-      // eslint-disable-next-line
-      state.contacts.map((contact) => {
-        if (contact.id === action.payload.id) {
-          contact.name = action.payload.name;
-          contact.mobileNum = action.payload.mobileNum;
-          contact.workNum = action.payload.workNum;
-          contact.homeNum = action.payload.homeNum;
-          contact.mainAddress = action.payload.mainAddress;
-          contact.secAddress = action.payload.secAddress;
-        }
-      });
+
+    updateContact: (state, { payload }) => {
+      const existingContact = state.contacts.find(
+        (contact) => contact.id === payload.id
+      );
+      if (existingContact) {
+        existingContact.name = payload.name;
+        existingContact.mobileNum = payload.mobileNum;
+        existingContact.workNum = payload.workNum;
+        existingContact.homeNum = payload.homeNum;
+        existingContact.mainAddress = payload.mainAddress;
+        existingContact.secAddress = payload.secAddress;
+      }
     },
   },
 });
