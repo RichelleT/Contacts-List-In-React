@@ -5,6 +5,7 @@ import "../../styles/contacts.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useNavigate, Link } from "react-router-dom";
 import {
+  addFavourite,
   removeContact,
   selectAllContact,
 } from "../../redux/contacts/contactSlice";
@@ -21,7 +22,11 @@ const ContactsList = () => {
     setLsContactArray(JSON.parse(localStorage.getItem("lscontacts")));
   }, [contacts]);
 
-  const renderContacts = lsContactArray.map((contact) => (
+  console.log(lsContactArray);
+  // const [favourite, setFavourite] = React.useState(false)
+  // add onclick function to set favourite status boolean
+
+  const renderContactsNoF = lsContactArray.map((contact) => (
     <>
       <div className="col-3 mt-5">
         <div className="card w-100">
@@ -94,7 +99,16 @@ const ContactsList = () => {
             </details>
             <hr />
             <div className="row d-flex align-items-center justify-content-between">
-              <div className="col-4">
+              <div className="col-3">
+                <button className="iconBtn">
+                  <i
+                    className="bi bi-star"
+                    style={{ color: "orange" }}
+                    title="Add favourite contact"
+                  ></i>
+                </button>
+              </div>
+              <div className="col-3">
                 <Link to={`/contact/${contact.id}`}>
                   <i
                     className="bi bi-eye"
@@ -102,7 +116,7 @@ const ContactsList = () => {
                   ></i>
                 </Link>
               </div>
-              <div className="col-4">
+              <div className="col-3">
                 <button
                   className="iconBtn"
                   onClick={() => {
@@ -110,13 +124,13 @@ const ContactsList = () => {
                   }}
                 >
                   <i
-                    className="bi bi-dash-lg red"
+                    className="bi bi-dash-lg"
                     style={{ color: "red" }}
                     title="Delete contact"
                   ></i>
                 </button>
               </div>
-              <div className="col-4">
+              <div className="col-3">
                 <Link to={`/contact/edit/${contact.id}`}>
                   <i
                     className="bi bi-three-dots"
@@ -148,7 +162,13 @@ const ContactsList = () => {
           </div>
         </div>
         <div className="container noBorder">
-          <div className="row row-cols-1 row-cols-md-5">{renderContacts}</div>
+          {lsContactArray.map((listItem) => {
+            return (
+              <div className="row row-cols-1 row-cols-md-5">
+                {renderContactsNoF}
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>

@@ -12,7 +12,15 @@ const contactSlice = createSlice({
       reducer(state, action) {
         state.contacts.push(action.payload);
       },
-      prepare(name, mobileNum, workNum, homeNum, mainAddress, secAddress) {
+      prepare(
+        name,
+        mobileNum,
+        workNum,
+        homeNum,
+        mainAddress,
+        secAddress,
+        favourite
+      ) {
         return {
           payload: {
             id: nanoid(),
@@ -22,6 +30,7 @@ const contactSlice = createSlice({
             homeNum,
             mainAddress,
             secAddress,
+            favourite: false,
           },
         };
       },
@@ -37,8 +46,16 @@ const contactSlice = createSlice({
     },
 
     updateContact: (state, action) => {
-      const { id, name, mobileNum, workNum, homeNum, mainAddress, secAddress } =
-        action.payload;
+      const {
+        id,
+        name,
+        mobileNum,
+        workNum,
+        homeNum,
+        mainAddress,
+        secAddress,
+        favourite,
+      } = action.payload;
       const contactId = action.payload;
       const index = state.contacts.findIndex(
         (contact) => contact.id === action.payload.id
@@ -52,6 +69,7 @@ const contactSlice = createSlice({
         newArray[index].homeNum = homeNum;
         newArray[index].mainAddress = mainAddress;
         newArray[index].secAddress = secAddress;
+        newArray[index].favourite = favourite;
         console.log(JSON.stringify(newArray));
       }
     },
@@ -61,8 +79,14 @@ const contactSlice = createSlice({
 export const selectContactById = (state, contactId) =>
   state.contacts.contacts.find((contact) => contact.id === contactId);
 
-export const { contactAdded, clearAllContacts, removeContact, updateContact } =
-  contactSlice.actions;
+export const {
+  contactAdded,
+  clearAllContacts,
+  removeContact,
+  updateContact,
+  addFavourite,
+  removeFavourite,
+} = contactSlice.actions;
 
 export const selectAllContact = (state) => state.contacts.contacts;
 
