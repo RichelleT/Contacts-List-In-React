@@ -95,12 +95,6 @@ const ContactsList = () => {
                     title="View full details of contact"
                   ></i>
                 </Link>
-                {/* <button className="iconBtn">
-                  <i
-                    className="bi bi-eye"
-                    title="View full details of contact"
-                  ></i>
-                </button> */}
               </div>
               <div className="col-3">
                 <button
@@ -123,12 +117,6 @@ const ContactsList = () => {
                     title="Edit contact details"
                   ></i>
                 </Link>
-                {/* <button className="iconBtn">
-                  <i
-                    className="bi bi-three-dots"
-                    title="Edit contact details"
-                  ></i>
-                </button> */}
               </div>
             </div>
           </div>
