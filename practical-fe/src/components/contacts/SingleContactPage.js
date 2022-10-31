@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectContactById } from "../../redux/contacts/contactSlice";
 import { useParams } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import React from "react";
 import Header from "../common/header/Header";
@@ -35,6 +35,11 @@ export const SingleContactPage = () => {
             <p>{contact.homeNum}</p>
             <p>{contact.mainAddress}</p>
             <p>{contact.secAddress}</p>
+          </div>
+          <div>
+            <Link to={`/contact/edit/${contact.id}`}>
+              Edit Contact Information
+            </Link>
           </div>
         </div>
       </div>
