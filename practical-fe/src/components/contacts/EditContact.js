@@ -1,99 +1,30 @@
 import * as React from "react";
 import Header from "../common/header/Header";
 
-export const EditContact = ({
-  contact,
-  setContact,
-  selectedContact,
-  isEditMode,
-  handleUpdate,
-  handleCancelUpdate,
-  handleChange,
-}) => {
-  React.useEffect(() => {
-    setContact({
-      name: selectedContact.name,
-      mobileNum: selectedContact.mobileNum,
-      workNum: selectedContact.workNum,
-      homeNum: selectedContact.homeNum,
-      mainAddress: selectedContact.mainAddress,
-      secAddress: selectedContact.secAddress,
-    });
-  }, [
-    selectedContact.name,
-    selectedContact.mobileNum,
-    selectedContact.workNum,
-    selectedContact.homeNum,
-    selectedContact.mainAddress,
-    selectedContact.secAddress,
-    setContact,
-  ]);
-
+export const EditContact = () => {
   return (
     <div>
       <Header />
       <div className="container noBorder">
         <h2>Edit Contact</h2>
-        <form onSubmit={(event) => event.preventDefault()}>
+        <form>
           <label htmlFor="contactName">Contact Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={contact.name}
-            onChange={handleChange}
-          />
+          <input type="text" id="contactName" name="contactName" />
           <label htmlFor="mobileNum">Mobile Number:</label>
-          <input
-            type="text"
-            id="mobileNum"
-            name="mobileNum"
-            value={contact.mobileNum}
-            onChange={handleChange}
-          />
+          <input type="text" id="mobileNum" name="mobileNum" />
           <label htmlFor="workNum">Work Number:</label>
-          <input
-            type="text"
-            id="workNum"
-            name="workNum"
-            value={contact.workNum}
-            onChange={handleChange}
-          />
+          <input type="text" id="workNum" name="workNum" />
           <label htmlFor="homeNum">Home Number:</label>
-          <input
-            type="text"
-            id="homeNum"
-            name="homeNum"
-            value={contact.homeNum}
-            onChange={handleChange}
-          />
+          <input type="text" id="homeNum" name="homeNum" />
           <label htmlFor="mainAddress">Main Address:</label>
-          <input
-            type="text"
-            id="mainAddress"
-            name="mainAddress"
-            value={contact.mainAddress}
-            onChange={handleChange}
-          />
+          <input type="text" id="mainAddress" name="mainAddress" />
           <label htmlFor="secAddress">Secondary/Optional Address:</label>
-          <input
-            type="text"
-            id="secAddress"
-            name="secAddress"
-            value={contact.secAddress}
-            onChange={handleChange}
-          />
-          <button
-            className="btnA"
-            type="button"
-            value="Update Contact"
-            onClick={handleUpdate}
-          >
-            Update Contact
+          <input type="text" id="secAddress" name="secAddress" />
+          <button className="btnA" type="button">
+            Add Contact
           </button>
         </form>
       </div>
     </div>
   );
-  //   }
 };

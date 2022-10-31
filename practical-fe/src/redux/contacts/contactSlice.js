@@ -36,19 +36,7 @@ const contactSlice = createSlice({
       state.contacts = state.contacts.filter((item) => item.id !== contactId);
     },
 
-    updateContact: (state, { payload }) => {
-      const existingContact = state.contacts.find(
-        (contact) => contact.id === payload.id
-      );
-      if (existingContact) {
-        existingContact.name = payload.name;
-        existingContact.mobileNum = payload.mobileNum;
-        existingContact.workNum = payload.workNum;
-        existingContact.homeNum = payload.homeNum;
-        existingContact.mainAddress = payload.mainAddress;
-        existingContact.secAddress = payload.secAddress;
-      }
-    },
+    updateContact: (state, { payload }) => {},
   },
 });
 
@@ -57,6 +45,7 @@ export const selectContactById = (state, contactId) =>
 
 export const { contactAdded, clearAllContacts, removeContact, updateContact } =
   contactSlice.actions;
+
 export const selectAllContact = (state) => state.contacts.contacts;
 
 export default contactSlice.reducer;

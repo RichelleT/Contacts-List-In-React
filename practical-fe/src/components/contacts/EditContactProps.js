@@ -1,7 +1,11 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateContact } from "../../redux/contacts/contactSlice";
+import {
+  updateContact,
+  selectContactActionCreator,
+} from "../../redux/contacts/contactSlice";
 import { AddContactsForm } from "./AddContactsForm";
+import ContactsList from "./ContactsList";
 import { EditContact } from "./EditContact";
 
 export default function App() {
@@ -23,7 +27,6 @@ export default function App() {
     selectedContactId &&
     contacts.find((contact) => contact.id === selectedContactId);
 
-  // eslint-disable-next-line
   const setValues = () => {
     setContact({
       name: selectedContact.name,
@@ -35,6 +38,14 @@ export default function App() {
     });
   };
 
+  const handleSelectContact = (contactId) => {
+    dispatch(selectContactActionCreator({ id: contactId }));
+  };
+
+  const handleEdit = () => {
+    if (!selectedContact) return;
+    setValues();
+  };
   const handleUpdate = (e) => {
     e.preventDefault();
 
@@ -81,7 +92,7 @@ export default function App() {
     setContact({ ...contact, [event.target.name]: event.target.value });
   };
   return (
-    <div className="App">
+    <div>
       {isEditMode ? (
         <EditContact
           contact={contact}
@@ -95,6 +106,12 @@ export default function App() {
       ) : (
         <AddContactsForm />
       )}
+      <ContactsList
+        contacts={contacts}
+        handleSelectContact={handleSelectContact}
+        handleEdit={handleEdit}
+        setIsEditMode={setIsEditMode}
+      />
     </div>
   );
 }
