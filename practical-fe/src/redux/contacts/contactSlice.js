@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = [
   {
@@ -8,6 +8,7 @@ const initialState = [
     workNum: "",
     homeNum: "",
     mainAddress: "bangsar south, kuala lumpur",
+    secAddress: "",
   },
   {
     id: 2,
@@ -16,45 +17,37 @@ const initialState = [
     workNum: "088497238",
     homeNum: "",
     mainAddress: "subang jaya, selangor",
+    secAddress: "bangsar south, kuala lumpur",
   },
-  //   {
-  //     id: 3,
-  //     name: "Kim Yoo Jin",
-  //     mobileNum: "0167894567",
-  //     workNum: "088497238",
-  //     homeNum: "",
-  //     mainAddress: "subang jaya, selangor",
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "Richelle Tan",
-  //     mobileNum: "0119994567",
-  //     workNum: "",
-  //     homeNum: "",
-  //     mainAddress: "bangsar south, kuala lumpur",
-  //   },
-  //   {
-  //     id: 5,
-  //     name: "Kim Yoo Jin",
-  //     mobileNum: "0167894567",
-  //     workNum: "088497238",
-  //     homeNum: "",
-  //     mainAddress: "subang jaya, selangor",
-  //   },
-  //   {
-  //     id: 6,
-  //     name: "Richelle Tan",
-  //     mobileNum: "0119994567",
-  //     workNum: "",
-  //     homeNum: "",
-  //     mainAddress: "bangsar south, kuala lumpur",
-  //   },
 ];
 
 const contactSlice = createSlice({
   name: "contacts",
   initialState,
-  reducers: {},
+  reducers: {
+    contactAdded: {
+      reducer(state, action) {
+        state.push(action.payload);
+      },
+      prepare(name, mobileNum, workNum, homeNum, mainAddress, secAddress) {
+        return {
+          payload: {
+            id: nanoid(),
+            name,
+            mobileNum,
+            workNum,
+            homeNum,
+            mainAddress,
+            secAddress,
+          },
+        };
+      },
+    },
+  },
 });
+
+export const { contactAdded } = contactSlice.actions;
+
+export const selectAllContact = (state) => state.contacts;
 
 export default contactSlice.reducer;

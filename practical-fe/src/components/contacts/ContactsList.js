@@ -3,9 +3,10 @@ import Header from "../common/header/Header";
 import "../../styles/contacts.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useNavigate } from "react-router-dom";
+import { selectAllContact } from "../../redux/contacts/contactSlice";
 
 const ContactsList = () => {
-  const contacts = useSelector((state) => state.contacts);
+  const contacts = useSelector(selectAllContact);
   const defImg = require("../../assets/defAvatarImg.png");
   let navigate = useNavigate();
 
@@ -49,8 +50,26 @@ const ContactsList = () => {
             </div>
             <hr />
             <details>
-              {contact.mainAddress}
-              <summary>Address</summary>
+              {contact.mainAddress.length > 0 && (
+                <>
+                  <b>Main Address:</b> <br />
+                  {contact.mainAddress}
+                </>
+              )}
+              {contact.secAddress.length > 0 && (
+                <>
+                  <br />
+                  <b>Secondary Address:</b> <br />
+                  {contact.secAddress}
+                </>
+              )}
+              {contact.secAddress.length === 0 &&
+                contact.mainAddress.length === 0 && (
+                  <>
+                    <b>No Address Added</b> <br />
+                  </>
+                )}
+              <summary>Addresses</summary>
             </details>
             <hr />
             <div className="row d-flex align-items-center justify-content-around">
@@ -92,11 +111,8 @@ const ContactsList = () => {
               <h2>Contacts List</h2>
             </div>
             <div className="col-6 d-flex justify-content-end">
-              <button
-                className="iconBtn"
-                onClick={() => navigate("/contactsForm")}
-              >
-                <i className="bi bi-plus-circle fs-5"></i>
+              <button className="btnA" onClick={() => navigate("/addContact")}>
+                <i class="bi bi-plus"></i> Add New Contact&nbsp;
               </button>
             </div>
           </div>
