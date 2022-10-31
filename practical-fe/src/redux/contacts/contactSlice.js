@@ -36,7 +36,21 @@ const contactSlice = createSlice({
       state.contacts = state.contacts.filter((item) => item.id !== contactId);
     },
 
-    updateContact: (state, { payload }) => {},
+    updateContact: (state, action) => {
+      const { id, name, mobileNum, workNum, homeNum, mainAddress, secAddress } =
+        action.payload;
+      const existingContact = state.contacts.find(
+        (contact) => contact.id === id
+      );
+      if (existingContact) {
+        existingContact.name = name;
+        existingContact.mobileNum = mobileNum;
+        existingContact.workNum = workNum;
+        existingContact.homeNum = homeNum;
+        existingContact.mainAddress = mainAddress;
+        existingContact.secAddress = secAddress;
+      }
+    },
   },
 });
 
