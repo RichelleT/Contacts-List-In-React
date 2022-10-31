@@ -8,7 +8,7 @@ import {
   selectAllContact,
 } from "../../redux/contacts/contactSlice";
 
-const ContactsList = (handleEdit, setIsEditMode, handleSelectContact) => {
+const ContactsList = () => {
   const defImg = require("../../assets/defAvatarImg.png");
   let navigate = useNavigate();
   const dispatch = useDispatch();

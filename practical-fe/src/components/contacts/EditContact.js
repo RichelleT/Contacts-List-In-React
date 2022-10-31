@@ -1,12 +1,17 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../common/header/Header";
-import { useNavigate, useLocation } from "react-router-dom";
-import { updateContact } from "../../redux/contacts/contactSlice";
+import { useNavigate, useParams } from "react-router-dom";
+import {
+  selectContactById,
+  updateContact,
+} from "../../redux/contacts/contactSlice";
 
 export function EditContact() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { contactId } = useParams();
+  const contacts = useSelector((state) => selectContactById(state, contactId));
 
   const [name, setName] = React.useState("");
   const [mobileNum, setMobileNum] = React.useState("");
@@ -23,32 +28,38 @@ export function EditContact() {
   const onSecAddressChanged = (event) => setSecAddress(event.target.value);
 
   const handleClick = () => {
-    if (name && mobileNum) {
-      dispatch(
-        updateContact({
-          name,
-          mobileNum,
-          workNum,
-          homeNum,
-          mainAddress,
-          secAddress,
-        })
-      );
-      setName("");
-      setMobileNum("");
-      setWorkNum("");
-      setHomeNum("");
-      setMainAddress("");
-      setSecAddress("");
+    if (contacts) {
+      if (name && mobileNum) {
+        dispatch(
+          updateContact({
+            name,
+            mobileNum,
+            workNum,
+            homeNum,
+            mainAddress,
+            secAddress,
+          })
+        );
+        setName("");
+        setMobileNum("");
+        setWorkNum("");
+        setHomeNum("");
+        setMainAddress("");
+        setSecAddress("");
+      }
+      navigate("/contacts");
     }
-    navigate("/contacts");
   };
+
+  const canSaveContact = Boolean(name) && Boolean(mobileNum);
+
   return (
     <div>
       <Header />
       <div className="container noBorder">
         <h2>Edit Contact</h2>
-        <form>
+
+        <form onSubmit={(event) => event.preventDefault()}>
           <label htmlFor="contactName">Contact Name:</label>
           <input
             type="text"
@@ -97,7 +108,12 @@ export function EditContact() {
             onChange={onSecAddressChanged}
             value={secAddress}
           />
-          <button className="btnA" type="button" onClick={handleClick}>
+          <button
+            className="btnA"
+            type="button"
+            onClick={handleClick}
+            disabled={!canSaveContact}
+          >
             Add Contact
           </button>
         </form>
