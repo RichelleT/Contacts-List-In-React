@@ -37,21 +37,18 @@ const contactSlice = createSlice({
     },
 
     updateContact: (state, action) => {
-      const { id, name, mobileNum, workNum, homeNum, mainAddress, secAddress } =
+      const { name, mobileNum, workNum, homeNum, mainAddress, secAddress } =
         action.payload;
-      const existingContact = state.contacts.map(
-        (contact) => contact.id === id
+      const index = state.contacts.findIndex(
+        (contact) => contact.id !== action.payload
       );
-      console.log("existing");
-      console.log(existingContact);
-      if (existingContact) {
-        existingContact.name = name;
-        existingContact.mobileNum = mobileNum;
-        existingContact.workNum = workNum;
-        existingContact.homeNum = homeNum;
-        existingContact.mainAddress = mainAddress;
-        existingContact.secAddress = secAddress;
-      }
+      const newArray = [...state.contacts];
+      newArray[index].name = name;
+      newArray[index].mobileNum = mobileNum;
+      newArray[index].workNum = workNum;
+      newArray[index].homeNum = homeNum;
+      newArray[index].mainAddress = mainAddress;
+      newArray[index].secAddress = secAddress;
     },
   },
 });

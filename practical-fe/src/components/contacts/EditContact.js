@@ -7,18 +7,6 @@ import { updateContact } from "../../redux/contacts/contactSlice";
 export function EditContact() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  //   const { pathname } = useLocation();
-  //   const userId = parseInt(pathname.replace("/contact/edit/", ""));
-
-  //   const contact = useSelector((state) =>
-  //     state.contacts.find((contact) => contact.id === userId)
-  //   );
-  //   const [name, setName] = React.useState(contact.name);
-  //   const [mobileNum, setMobileNum] = React.useState(contact.mobileNum);
-  //   const [workNum, setWorkNum] = React.useState(contact.workNum);
-  //   const [homeNum, setHomeNum] = React.useState(contact.homeNum);
-  //   const [mainAddress, setMainAddress] = React.useState(contact.mainAddress);
-  //   const [secAddress, setSecAddress] = React.useState(contact.secAddress);
 
   const [name, setName] = React.useState("");
   const [mobileNum, setMobileNum] = React.useState("");
