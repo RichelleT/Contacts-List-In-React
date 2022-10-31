@@ -9,6 +9,7 @@ const ContactsList = () => {
   const contacts = useSelector(selectAllContact);
   const defImg = require("../../assets/defAvatarImg.png");
   let navigate = useNavigate();
+  console.log(contacts);
 
   const renderContacts = contacts.map((contact) => (
     <>
