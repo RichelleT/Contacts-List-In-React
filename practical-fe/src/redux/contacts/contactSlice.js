@@ -42,6 +42,8 @@ const contactSlice = createSlice({
       const existingContact = state.contacts.find(
         (contact) => contact.id === id
       );
+      console.log("existing");
+      console.log(existingContact);
       if (existingContact) {
         existingContact.name = name;
         existingContact.mobileNum = mobileNum;
