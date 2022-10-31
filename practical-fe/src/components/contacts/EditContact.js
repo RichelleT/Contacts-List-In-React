@@ -1,13 +1,60 @@
 import * as React from "react";
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../common/header/Header";
-// import { useNavigate } from "react-router-dom";
-// import { updateContact } from "../../redux/contacts/contactSlice";
+import { useNavigate, useLocation } from "react-router-dom";
+import { updateContact } from "../../redux/contacts/contactSlice";
 
 export function EditContact() {
-  //   const dispatch = useDispatch();
-  //   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  //   const { pathname } = useLocation();
+  //   const userId = parseInt(pathname.replace("/contact/edit/", ""));
 
+  //   const contact = useSelector((state) =>
+  //     state.contacts.find((contact) => contact.id === userId)
+  //   );
+  //   const [name, setName] = React.useState(contact.name);
+  //   const [mobileNum, setMobileNum] = React.useState(contact.mobileNum);
+  //   const [workNum, setWorkNum] = React.useState(contact.workNum);
+  //   const [homeNum, setHomeNum] = React.useState(contact.homeNum);
+  //   const [mainAddress, setMainAddress] = React.useState(contact.mainAddress);
+  //   const [secAddress, setSecAddress] = React.useState(contact.secAddress);
+
+  const [name, setName] = React.useState("");
+  const [mobileNum, setMobileNum] = React.useState("");
+  const [workNum, setWorkNum] = React.useState("");
+  const [homeNum, setHomeNum] = React.useState("");
+  const [mainAddress, setMainAddress] = React.useState("");
+  const [secAddress, setSecAddress] = React.useState("");
+
+  const onNameChanged = (event) => setName(event.target.value);
+  const onMobileNumChanged = (event) => setMobileNum(event.target.value);
+  const onWorkNumChanged = (event) => setWorkNum(event.target.value);
+  const onHomeNumChanged = (event) => setHomeNum(event.target.value);
+  const onMainAddressChanged = (event) => setMainAddress(event.target.value);
+  const onSecAddressChanged = (event) => setSecAddress(event.target.value);
+
+  const handleClick = () => {
+    if (name && mobileNum) {
+      dispatch(
+        updateContact({
+          name,
+          mobileNum,
+          workNum,
+          homeNum,
+          mainAddress,
+          secAddress,
+        })
+      );
+      setName("");
+      setMobileNum("");
+      setWorkNum("");
+      setHomeNum("");
+      setMainAddress("");
+      setSecAddress("");
+    }
+    navigate("/contacts");
+  };
   return (
     <div>
       <Header />
@@ -19,54 +66,50 @@ export function EditContact() {
             type="text"
             id="contactName"
             name="contactName"
-            // onChange={onNameChanged}
-            // value={name}
+            onChange={onNameChanged}
+            value={name}
           />
           <label htmlFor="mobileNum">Mobile Number:</label>
           <input
             type="text"
             id="mobileNum"
             name="mobileNum"
-            // onChange={onMobileNumChanged}
-            // value={mobileNum}
+            onChange={onMobileNumChanged}
+            value={mobileNum}
           />
           <label htmlFor="workNum">Work Number:</label>
           <input
             type="text"
             id="workNum"
             name="workNum"
-            // onChange={onWorkNumChanged}
-            // value={workNum}
+            onChange={onWorkNumChanged}
+            value={workNum}
           />
           <label htmlFor="homeNum">Home Number:</label>
           <input
             type="text"
             id="homeNum"
             name="homeNum"
-            // onChange={onHomeNumChanged}
-            // value={homeNum}
+            onChange={onHomeNumChanged}
+            value={homeNum}
           />
           <label htmlFor="mainAddress">Main Address:</label>
           <input
             type="text"
             id="mainAddress"
             name="mainAddress"
-            // onChange={onMainAddressChanged}
-            // value={mainAddress}
+            onChange={onMainAddressChanged}
+            value={mainAddress}
           />
           <label htmlFor="secAddress">Secondary/Optional Address:</label>
           <input
             type="text"
             id="secAddress"
             name="secAddress"
-            // onChange={onSecAddressChanged}
-            // value={secAddress}
+            onChange={onSecAddressChanged}
+            value={secAddress}
           />
-          <button
-            className="btnA"
-            type="button"
-            //   onClick={handleClick}
-          >
+          <button className="btnA" type="button" onClick={handleClick}>
             Add Contact
           </button>
         </form>

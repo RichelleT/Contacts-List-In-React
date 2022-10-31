@@ -39,7 +39,7 @@ const contactSlice = createSlice({
     updateContact: (state, action) => {
       const { id, name, mobileNum, workNum, homeNum, mainAddress, secAddress } =
         action.payload;
-      const existingContact = state.contacts.find(
+      const existingContact = state.contacts.map(
         (contact) => contact.id === id
       );
       console.log("existing");
