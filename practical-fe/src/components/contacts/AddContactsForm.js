@@ -53,43 +53,43 @@ export const AddContactsForm = () => {
             value={name}
             onChange={onNameChanged}
           />
-          <label htmlFor="contactName">Mobile Number:</label>
+          <label htmlFor="mobileNum">Mobile Number:</label>
           <input
             type="text"
-            id="contactName"
-            name="contactName"
+            id="mobileNum"
+            name="mobileNum"
             value={mobileNum}
             onChange={onMobileNumChanged}
           />
-          <label htmlFor="contactName">Work Number:</label>
+          <label htmlFor="workNum">Work Number:</label>
           <input
             type="text"
-            id="contactName"
-            name="contactName"
+            id="workNum"
+            name="workNum"
             value={workNum}
             onChange={onWorkNumChanged}
           />
-          <label htmlFor="contactName">Home Number:</label>
+          <label htmlFor="homeNum">Home Number:</label>
           <input
             type="text"
-            id="contactName"
-            name="contactName"
+            id="homeNum"
+            name="homeNum"
             value={homeNum}
             onChange={onHomeNumChanged}
           />
-          <label htmlFor="contactName">Main Address:</label>
+          <label htmlFor="mainAddress">Main Address:</label>
           <input
             type="text"
-            id="contactName"
-            name="contactName"
+            id="mainAddress"
+            name="mainAddress"
             value={mainAddress}
             onChange={onMainAddressChanged}
           />
-          <label htmlFor="contactName">Secondary/Optional Address:</label>
+          <label htmlFor="secAddress">Secondary/Optional Address:</label>
           <input
             type="text"
-            id="contactName"
-            name="contactName"
+            id="secAddress"
+            name="secAddress"
             value={secAddress}
             onChange={onSecAddressChanged}
           />
