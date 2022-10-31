@@ -37,21 +37,25 @@ const contactSlice = createSlice({
     },
 
     updateContact: (state, action) => {
-      const { name, mobileNum, workNum, homeNum, mainAddress, secAddress } =
+      const { id, name, mobileNum, workNum, homeNum, mainAddress, secAddress } =
         action.payload;
       const contactId = action.payload;
       const index = state.contacts.findIndex(
-        (contact) => contact.id !== action.payload
+        (contact) => contact.id === action.payload.id
       );
-      if (state.contacts.filter((item) => item.id !== contactId)) {
+      if (state.contacts.filter((contact) => contact.id === contactId)) {
         const newArray = [...state.contacts];
-
+        newArray[index].id = id;
         newArray[index].name = name;
         newArray[index].mobileNum = mobileNum;
         newArray[index].workNum = workNum;
         newArray[index].homeNum = homeNum;
         newArray[index].mainAddress = mainAddress;
         newArray[index].secAddress = secAddress;
+        console.log("newArray");
+        console.log(newArray);
+      } else {
+        console.log("wtf");
       }
     },
   },

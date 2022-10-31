@@ -13,6 +13,7 @@ export function EditContact() {
   const { contactId } = useParams();
   const contacts = useSelector((state) => selectContactById(state, contactId));
 
+  const [id, setId] = React.useState("");
   const [name, setName] = React.useState("");
   const [mobileNum, setMobileNum] = React.useState("");
   const [workNum, setWorkNum] = React.useState("");
@@ -28,10 +29,13 @@ export function EditContact() {
   const onSecAddressChanged = (event) => setSecAddress(event.target.value);
 
   const handleClick = () => {
-    if (contacts) {
+    console.log(contacts.id);
+    console.log(contactId);
+    if (contacts.id === contactId) {
       if (name && mobileNum) {
         dispatch(
           updateContact({
+            id: contacts.id,
             name,
             mobileNum,
             workNum,
@@ -46,6 +50,8 @@ export function EditContact() {
         setHomeNum("");
         setMainAddress("");
         setSecAddress("");
+        setId("");
+        console.log(name);
       }
       navigate("/contacts");
     }
