@@ -12,7 +12,7 @@ export function EditContact() {
   const navigate = useNavigate();
   const { contactId } = useParams();
   const contacts = useSelector((state) => selectContactById(state, contactId));
-
+  // eslint-disable-next-line
   const [id, setId] = React.useState("");
   const [name, setName] = React.useState("");
   const [mobileNum, setMobileNum] = React.useState("");
