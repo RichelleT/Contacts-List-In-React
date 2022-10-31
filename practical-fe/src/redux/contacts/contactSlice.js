@@ -2,8 +2,6 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = {
   contacts: [],
-  error: null,
-  status: "idle",
 };
 
 const contactSlice = createSlice({
@@ -28,12 +26,34 @@ const contactSlice = createSlice({
         };
       },
     },
+    clearAllContacts: (state) => {
+      state.contacts = [];
+    },
+    removeContact: (state, action) => {
+      const contactId = action.payload;
+      state.contacts = state.contacts.filter((item) => item.id !== contactId);
+    },
+    updateContact: (state, action) => {
+      // eslint-disable-next-line
+      state.contacts.map((contact) => {
+        if (contact.id === action.payload.id) {
+          contact.name = action.payload.name;
+          contact.mobileNum = action.payload.mobileNum;
+          contact.workNum = action.payload.workNum;
+          contact.homeNum = action.payload.homeNum;
+          contact.mainAddress = action.payload.mainAddress;
+          contact.secAddress = action.payload.secAddress;
+        }
+      });
+    },
   },
 });
 
-export const { contactAdded } = contactSlice.actions;
+export const selectContactById = (state, contactId) =>
+  state.contacts.contacts.find((contact) => contact.id === contactId);
+
+export const { contactAdded, clearAllContacts, removeContact, updateContact } =
+  contactSlice.actions;
 export const selectAllContact = (state) => state.contacts.contacts;
-export const getPostsStatus = (state) => state.contacts.status;
-export const getPostsError = (state) => state.contacts.error;
 
 export default contactSlice.reducer;

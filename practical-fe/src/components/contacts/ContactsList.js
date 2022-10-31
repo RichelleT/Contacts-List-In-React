@@ -1,14 +1,18 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Header from "../common/header/Header";
 import "../../styles/contacts.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { useNavigate } from "react-router-dom";
-import { selectAllContact } from "../../redux/contacts/contactSlice";
+import { useNavigate, Link } from "react-router-dom";
+import {
+  removeContact,
+  selectAllContact,
+} from "../../redux/contacts/contactSlice";
 
 const ContactsList = () => {
-  const contacts = useSelector(selectAllContact);
   const defImg = require("../../assets/defAvatarImg.png");
   let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const contacts = useSelector(selectAllContact);
   console.log(contacts);
 
   const renderContacts = contacts.map((contact) => (
@@ -75,16 +79,27 @@ const ContactsList = () => {
             <hr />
             <div className="row d-flex align-items-center justify-content-around">
               <div className="col-3">
-                <button className="iconBtn">
+                <Link to={`/contact/${contact.id}`}>
                   <i
                     className="bi bi-eye"
                     title="View full details of contact"
                   ></i>
-                </button>
+                </Link>
+                {/* <button className="iconBtn">
+                  <i
+                    className="bi bi-eye"
+                    title="View full details of contact"
+                  ></i>
+                </button> */}
               </div>
               <div className="col-3">
-                <button className="iconBtn">
-                  <i className="bi bi-dash-circle" title="Delete contact"></i>
+                <button
+                  className="iconBtn"
+                  onClick={() => {
+                    dispatch(removeContact(contact.id));
+                  }}
+                >
+                  <i className="bi bi-dash-lg" title="Delete contact"></i>
                 </button>
               </div>
               <div className="col-3">
