@@ -4,21 +4,26 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Header from "../common/header/Header";
 
 export default function Jokes() {
-  //   axios
-  //     .get("https://official-joke-api.appspot.com/jokes/ten")
-  //     .then(function (response) {
-  //       console.log(response.data);
-  //     });
-
   const [fullList, setList] = React.useState([]);
 
-  axios({
-    method: "get",
-    url: "https://official-joke-api.appspot.com/jokes/ten",
-  }).then(function (response) {
-    const result = response.data;
-    setList(result);
-  });
+  React.useEffect(() => {
+    axios({
+      method: "get",
+      url: "https://official-joke-api.appspot.com/jokes/ten",
+    }).then(function (response) {
+      const result = response.data;
+      setList(result);
+    });
+  }, []);
+
+  console.log(fullList);
+  // axios({
+  //   method: "get",
+  //   url: "https://official-joke-api.appspot.com/jokes/ten",
+  // }).then(function (response) {
+  //   const result = response.data;
+  //   setList(result);
+  // });
 
   return (
     <div>
