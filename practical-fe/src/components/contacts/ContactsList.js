@@ -22,7 +22,12 @@ const ContactsList = () => {
     setLsContactArray(JSON.parse(localStorage.getItem("lscontacts")));
   }, [contacts]);
 
-  console.log(lsContactArray);
+  // console.log(lsContactArray);
+
+  // eslint-disable-next-line
+  var sortByFavourite = lsContactArray.sort(function (a, b) {
+    return b.favourite - a.favourite;
+  });
 
   const renderContactsNoF = lsContactArray.map((contact) => (
     <>
