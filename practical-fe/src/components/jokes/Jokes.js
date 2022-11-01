@@ -7,6 +7,8 @@ import Header from "../common/header/Header";
 const Jokes = () => {
   const [fullList, setList] = React.useState([]);
   const [currentJokeIndex, setCurrentJokeIndex] = React.useState(0);
+  // eslint-disable-next-line
+  const [joke, setJoke] = React.useState("");
 
   React.useEffect(() => {
     axios({
@@ -18,18 +20,21 @@ const Jokes = () => {
     });
   }, []);
 
+  console.log(fullList);
+
   React.useEffect(() => {
-    const id = setTimeout(
-      () => setCurrentJokeIndex((currentJokeIndex + 1) % fullList.length),
-      5000
-    );
-    return () => {
-      clearInterval(id);
-    };
+    if (fullList.length > 0) {
+      const id = setTimeout(
+        () => setCurrentJokeIndex((currentJokeIndex + 1) % fullList.length),
+        5000
+      );
+      return () => {
+        clearInterval(id);
+      };
+    }
   }, [currentJokeIndex, fullList]);
 
-  const oneJoke =
-    fullList[currentJokeIndex].setup + fullList[currentJokeIndex].punchline;
+  console.log(fullList[currentJokeIndex]);
 
   return (
     <div>
@@ -46,7 +51,9 @@ const Jokes = () => {
           );
         })}
         <h2>Test Singular Loop Display</h2>
-        <p>{oneJoke}</p>
+        <div>
+          <p></p>
+        </div>
       </div>
     </div>
   );
