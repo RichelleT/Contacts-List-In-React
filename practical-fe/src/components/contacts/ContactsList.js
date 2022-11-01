@@ -29,7 +29,7 @@ const ContactsList = () => {
     return b.favourite - a.favourite;
   });
 
-  const renderContactsNoF = lsContactArray.map((contact) => (
+  const renderContacts = lsContactArray.map((contact) => (
     <>
       <div className="col-3 mt-5">
         <div className="card w-100">
@@ -168,9 +168,7 @@ const ContactsList = () => {
           </div>
         </div>
         <div className="container noBorder">
-          <div className="row row-cols-1 row-cols-md-4">
-            {renderContactsNoF}
-          </div>
+          <div className="row row-cols-1 row-cols-md-4">{renderContacts}</div>
         </div>
       </section>
     </div>
