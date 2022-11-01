@@ -165,7 +165,7 @@ const ContactsList = () => {
           </div>
         </div>
         <div className="container noBorder">
-          <div className="row row-cols-1 row-cols-md-5">
+          <div className="row row-cols-1 row-cols-md-4">
             {renderContactsNoF}
           </div>
         </div>
