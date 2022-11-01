@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Header from "../common/header/Header";
 import "../../styles/contacts.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { useNavigate, Link, useParams } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   removeContact,
   selectAllContact,
@@ -165,13 +165,9 @@ const ContactsList = () => {
           </div>
         </div>
         <div className="container noBorder">
-          {lsContactArray.map((listItem) => {
-            return (
-              <div className="row row-cols-1 row-cols-md-5">
-                {renderContactsNoF}
-              </div>
-            );
-          })}
+          <div className="row row-cols-1 row-cols-md-5">
+            {renderContactsNoF}
+          </div>
         </div>
       </section>
     </div>
