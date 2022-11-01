@@ -8,7 +8,7 @@ const Jokes = () => {
   const [fullList, setList] = React.useState([]);
   const [currentJokeIndex, setCurrentJokeIndex] = React.useState(0);
   // eslint-disable-next-line
-  //const [joke, setJoke] = React.useState("");
+  const [joke, setJokeLine] = React.useState("");
 
   React.useEffect(() => {
     axios({
@@ -35,6 +35,22 @@ const Jokes = () => {
   }, [currentJokeIndex, fullList]);
 
   console.log(fullList[currentJokeIndex]);
+
+  React.useEffect(() => {
+    if (fullList.length > 0 && fullList[currentJokeIndex].length > 0) {
+      const jokeSetup = JSON.stringify(fullList[currentJokeIndex].setup);
+      const jokePunchline = JSON.stringify(
+        fullList[currentJokeIndex].punchline
+      );
+
+      const conJoke = jokeSetup + jokePunchline;
+      console.log(conJoke);
+      setJokeLine(conJoke);
+    } else {
+      console.log("Error");
+    }
+  }, [currentJokeIndex, fullList]);
+
   //const oneJoke =
   //fullList[currentJokeIndex].setup + fullList[currentJokeIndex].punchline;
 
