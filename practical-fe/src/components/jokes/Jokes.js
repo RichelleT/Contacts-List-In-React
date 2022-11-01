@@ -3,9 +3,10 @@ import axios from "axios";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Header from "../common/header/Header";
 
-export default function Jokes() {
+//export default function Jokes() {
+const Jokes = () => {
   const [fullList, setList] = React.useState([]);
-  // const [joke, setJoke] = React.useState([]);
+  const [currentJokeIndex, setCurrentJokeIndex] = React.useState(0);
 
   React.useEffect(() => {
     axios({
@@ -17,25 +18,18 @@ export default function Jokes() {
     });
   }, []);
 
-  console.log(fullList);
+  React.useEffect(() => {
+    const id = setTimeout(
+      () => setCurrentJokeIndex((currentJokeIndex + 1) % fullList.length),
+      5000
+    );
+    return () => {
+      clearInterval(id);
+    };
+  }, [currentJokeIndex, fullList]);
 
-  // var randomItem = fullList[Math.floor(Math.random() * fullList.length)];
-  // var intervalId = setInterval(() => {
-  //   var timoutId = setTimeout(() => {
-  //     console.log(randomItem);
-  //     setJoke(randomItem);
-  //   }, 5000);
-  // }, 10000);
-
-  // console.log(joke);
-
-  // axios({
-  //   method: "get",
-  //   url: "https://official-joke-api.appspot.com/jokes/ten",
-  // }).then(function (response) {
-  //   const result = response.data;
-  //   setList(result);
-  // });
+  const oneJoke =
+    fullList[currentJokeIndex].setup + fullList[currentJokeIndex].punchline;
 
   return (
     <div>
@@ -51,16 +45,10 @@ export default function Jokes() {
             </div>
           );
         })}
-        {/* {joke.map((listItem) => {
-          return (
-            <div>
-              <p>
-                {listItem.setup} {listItem.punchline}
-              </p>
-            </div>
-          );
-        })} */}
+        <h2>Test Singular Loop Display</h2>
+        <p>{oneJoke}</p>
       </div>
     </div>
   );
-}
+};
+export default Jokes;
