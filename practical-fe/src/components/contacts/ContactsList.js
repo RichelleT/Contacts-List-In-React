@@ -105,7 +105,9 @@ const ContactsList = () => {
               <div className="col-3">
                 <button className="iconBtn">
                   <i
-                    className="bi bi-star"
+                    className={`switch ${
+                      contact.favourite ? "bi bi-star-fill" : "bi bi-star"
+                    }`}
                     style={{ color: "orange" }}
                     title="Add favourite contact"
                     onClick={() => {
