@@ -23,8 +23,6 @@ const ContactsList = () => {
   }, [contacts]);
 
   console.log(lsContactArray);
-  // const [favourite, setFavourite] = React.useState(false)
-  // add onclick function to set favourite status boolean
 
   const renderContactsNoF = lsContactArray.map((contact) => (
     <>
