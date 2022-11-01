@@ -8,7 +8,7 @@ const Jokes = () => {
   const [fullList, setList] = React.useState([]);
   const [currentJokeIndex, setCurrentJokeIndex] = React.useState(0);
   // eslint-disable-next-line
-  const [joke, setJoke] = React.useState("");
+  //const [joke, setJoke] = React.useState("");
 
   React.useEffect(() => {
     axios({
@@ -35,12 +35,15 @@ const Jokes = () => {
   }, [currentJokeIndex, fullList]);
 
   console.log(fullList[currentJokeIndex]);
+  //const oneJoke =
+  //fullList[currentJokeIndex].setup + fullList[currentJokeIndex].punchline;
 
   return (
     <div>
       <Header />
       <div className="container noBorder">
         <h2>Jokes</h2>
+        <h2>Shows Full List</h2>
         {fullList.map((listItem) => {
           return (
             <div>
@@ -51,9 +54,7 @@ const Jokes = () => {
           );
         })}
         <h2>Test Singular Loop Display</h2>
-        <div>
-          <p></p>
-        </div>
+        <div>{/* <p>{oneJoke}</p> */}</div>
       </div>
     </div>
   );
