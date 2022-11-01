@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import Header from "../common/header/Header";
 import "../../styles/contacts.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useParams } from "react-router-dom";
 import {
-  addFavourite,
   removeContact,
   selectAllContact,
+  toggleFavourite,
 } from "../../redux/contacts/contactSlice";
 
 const ContactsList = () => {
@@ -105,6 +105,9 @@ const ContactsList = () => {
                     className="bi bi-star"
                     style={{ color: "orange" }}
                     title="Add favourite contact"
+                    onClick={() => {
+                      dispatch(toggleFavourite(contact.id));
+                    }}
                   ></i>
                 </button>
               </div>

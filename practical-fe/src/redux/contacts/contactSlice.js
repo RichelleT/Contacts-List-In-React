@@ -36,6 +36,13 @@ const contactSlice = createSlice({
       },
     },
 
+    toggleFavourite: (state, action) => {
+      const contF = state.contacts.find((cont) => cont.id === action.payload);
+      if (contF) {
+        contF.favourite = !contF.favourite;
+      }
+    },
+
     clearAllContacts: (state) => {
       state.contacts = [];
     },
@@ -84,8 +91,7 @@ export const {
   clearAllContacts,
   removeContact,
   updateContact,
-  addFavourite,
-  removeFavourite,
+  toggleFavourite,
 } = contactSlice.actions;
 
 export const selectAllContact = (state) => state.contacts.contacts;

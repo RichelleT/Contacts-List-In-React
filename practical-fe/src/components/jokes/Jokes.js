@@ -5,6 +5,7 @@ import Header from "../common/header/Header";
 
 export default function Jokes() {
   const [fullList, setList] = React.useState([]);
+  // const [joke, setJoke] = React.useState([]);
 
   React.useEffect(() => {
     axios({
@@ -17,6 +18,17 @@ export default function Jokes() {
   }, []);
 
   console.log(fullList);
+
+  // var randomItem = fullList[Math.floor(Math.random() * fullList.length)];
+  // var intervalId = setInterval(() => {
+  //   var timoutId = setTimeout(() => {
+  //     console.log(randomItem);
+  //     setJoke(randomItem);
+  //   }, 5000);
+  // }, 10000);
+
+  // console.log(joke);
+
   // axios({
   //   method: "get",
   //   url: "https://official-joke-api.appspot.com/jokes/ten",
@@ -39,6 +51,15 @@ export default function Jokes() {
             </div>
           );
         })}
+        {/* {joke.map((listItem) => {
+          return (
+            <div>
+              <p>
+                {listItem.setup} {listItem.punchline}
+              </p>
+            </div>
+          );
+        })} */}
       </div>
     </div>
   );
