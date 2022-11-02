@@ -60,38 +60,44 @@ function Landing() {
   };
 
   return (
-    <div className="container pt-auto custMt">
-      <div className="row d-flex">
-        <div className="col-6">
-          <div className="custTitle">Sign In</div>
-          <div className="contBody">
-            <form onSubmit={handleSubmit}>
-              <label>Username</label>
-
-              <input
-                type="text"
-                value={username}
-                onBlur={handleBlur}
-                style={style(error)}
-                ref={ref}
-                onChange={handleChange}
-                onFocus={handleFocus}
-                name="username"
-                id="username"
-                placeholder="Enter Name"
-                pattern=".{4,15}"
-                required
-              />
-              {showErrorText && (
-                <p role="alert" style={{ color: "rgb(255, 0, 0)" }}>
-                  Please make sure username is between 4 and 15 characters.
-                </p>
-              )}
-              <button className="custButton">Enter</button>
-            </form>
+    <div className="custBg">
+      <div className="container pt-auto custMt noBg noBorder">
+        <div className="row d-flex">
+          <div className="col-4"></div>
+          <div className="col-4">
+            <div className="card border-primary">
+              <div className="custTitle">Sign In</div>
+              <div className="contBody">
+                <form onSubmit={handleSubmit}>
+                  <label>Username</label>
+                  <input
+                    type="text"
+                    value={username}
+                    onBlur={handleBlur}
+                    style={style(error)}
+                    ref={ref}
+                    onChange={handleChange}
+                    onFocus={handleFocus}
+                    name="username"
+                    id="username"
+                    placeholder="Enter Name"
+                    pattern=".{4,15}"
+                    required
+                  />
+                  {showErrorText && (
+                    <p role="alert" style={{ color: "rgb(255, 0, 0)" }}>
+                      Please make sure username is between 4 and 15 characters.
+                    </p>
+                  )}
+                  <br />
+                  <br />
+                  <button className="custButton">Enter</button>
+                </form>
+              </div>
+            </div>
           </div>
+          <div className="col-4"></div>
         </div>
-        <div className="col-6"></div>
       </div>
     </div>
   );

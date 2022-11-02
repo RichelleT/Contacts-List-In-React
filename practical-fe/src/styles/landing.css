@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   position: relative;
   /* margin-top: 250px !important;
   margin-bottom: 250px !important; */
@@ -12,12 +12,15 @@
 }
 
 .contBody {
-  /* display: flex;
-  flex-direction: column; */
-  display: block;
+  display: flex;
+  flex-direction: column;
+  /* display: block; */
   margin-top: auto;
   justify-content: flex-end;
   height: 250px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 .custMt {
@@ -83,4 +86,16 @@ img {
     #c850c0 46%,
     #ffcc70 100%
   );
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.noBg {
+  background: none;
+}
+
+.spanSpaceLanding {
+  padding-bottom: 30px;
 }

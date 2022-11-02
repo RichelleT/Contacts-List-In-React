@@ -52,6 +52,8 @@ export const AddContactsForm = () => {
             name="contactName"
             value={name}
             onChange={onNameChanged}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
+            required
           />
           <label htmlFor="mobileNum">Mobile Number:</label>
           <input
@@ -61,6 +63,7 @@ export const AddContactsForm = () => {
             value={mobileNum}
             onChange={onMobileNumChanged}
             onInput={(e) => (e.target.value = e.target.value.slice(0, 15))}
+            required
           />
           <label htmlFor="workNum">Work Number:</label>
           <input
@@ -87,6 +90,7 @@ export const AddContactsForm = () => {
             name="mainAddress"
             value={mainAddress}
             onChange={onMainAddressChanged}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 30))}
           />
           <label htmlFor="secAddress">Secondary/Optional Address:</label>
           <input
@@ -95,6 +99,7 @@ export const AddContactsForm = () => {
             name="secAddress"
             value={secAddress}
             onChange={onSecAddressChanged}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 30))}
           />
           <button
             className="btnA"
