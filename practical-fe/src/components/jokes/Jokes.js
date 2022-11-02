@@ -7,7 +7,6 @@ import Header from "../common/header/Header";
 const Jokes = () => {
   const [fullList, setList] = React.useState([]);
   const [currentJokeIndex, setCurrentJokeIndex] = React.useState(0);
-  // eslint-disable-next-line
   const [joke, setJokeLine] = React.useState("");
 
   React.useEffect(() => {
