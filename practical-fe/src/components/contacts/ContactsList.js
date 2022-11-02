@@ -27,7 +27,7 @@ const ContactsList = () => {
 
   // eslint-disable-next-line
   var sortByFavourite = lsContactArray.sort(function (a, b) {
-    return b.favourite - a.favourite;
+    return b.favourite - a.favourite || a.name.localeCompare(b.name);
   });
 
   const renderContacts = lsContactArray.map((contact) => (
