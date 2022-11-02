@@ -60,7 +60,9 @@ export const AddContactsForm = () => {
             }`}
           >
             <form className="my-4 mx-5">
-              <label htmlFor="contactName">Contact Name:</label>
+              <label htmlFor="contactName">
+                Contact Name:<span class="required">*</span>
+              </label>
               <input
                 type="text"
                 id="contactName"
@@ -72,7 +74,9 @@ export const AddContactsForm = () => {
               />
               <br />
               <br />
-              <label htmlFor="mobileNum">Mobile Number:</label>
+              <label htmlFor="mobileNum">
+                Mobile Number:<span class="required">*</span>
+              </label>
               <input
                 type="number"
                 id="mobileNum"

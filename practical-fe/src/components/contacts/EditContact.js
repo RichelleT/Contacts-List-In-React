@@ -81,7 +81,9 @@ export function EditContact() {
               className="my-4 mx-5"
               onSubmit={(event) => event.preventDefault()}
             >
-              <label htmlFor="contactName">Contact Name:</label>
+              <label htmlFor="contactName">
+                Contact Name:<span class="required">*</span>
+              </label>
               <input
                 type="text"
                 id="contactName"
@@ -93,7 +95,9 @@ export function EditContact() {
               />
               <br />
               <br />
-              <label htmlFor="mobileNum">Mobile Number:</label>
+              <label htmlFor="mobileNum">
+                Mobile Number:<span class="required">*</span>
+              </label>
               <input
                 type="number"
                 id="mobileNum"
