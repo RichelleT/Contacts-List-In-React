@@ -73,7 +73,7 @@ export function EditContact() {
             id="contactName"
             name="contactName"
             onChange={onNameChanged}
-            value={name}
+            value={name || contacts.name}
           />
           <label htmlFor="mobileNum">Mobile Number:</label>
           <input
@@ -81,7 +81,7 @@ export function EditContact() {
             id="mobileNum"
             name="mobileNum"
             onChange={onMobileNumChanged}
-            value={mobileNum}
+            value={mobileNum || contacts.mobileNum}
           />
           <label htmlFor="workNum">Work Number:</label>
           <input
@@ -89,7 +89,7 @@ export function EditContact() {
             id="workNum"
             name="workNum"
             onChange={onWorkNumChanged}
-            value={workNum}
+            value={workNum || contacts.workNum}
           />
           <label htmlFor="homeNum">Home Number:</label>
           <input
@@ -97,7 +97,7 @@ export function EditContact() {
             id="homeNum"
             name="homeNum"
             onChange={onHomeNumChanged}
-            value={homeNum}
+            value={homeNum || contacts.homeNum}
           />
           <label htmlFor="mainAddress">Main Address:</label>
           <input
@@ -105,7 +105,7 @@ export function EditContact() {
             id="mainAddress"
             name="mainAddress"
             onChange={onMainAddressChanged}
-            value={mainAddress}
+            value={mainAddress || contacts.mainAddress}
           />
           <label htmlFor="secAddress">Secondary/Optional Address:</label>
           <input
@@ -113,7 +113,7 @@ export function EditContact() {
             id="secAddress"
             name="secAddress"
             onChange={onSecAddressChanged}
-            value={secAddress}
+            value={secAddress || contacts.secAddress}
           />
           <button
             className="btnA"
