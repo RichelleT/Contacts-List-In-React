@@ -1,12 +1,12 @@
 import * as React from "react";
 import "../../../styles/header.css";
 import RenameModal from "../RenameModal";
-// import { ThemeContext } from "../theme/ThemeContext";
-// import ThemeToggler from "../theme/ThemeToggler";
+import { ThemeContext } from "../theme/ThemeContext";
+import ThemeToggler from "../theme/ThemeToggler";
 
 function Header() {
-  // const theme = React.useContext(ThemeContext);
-  // const darkMode = theme.state.darkMode;
+  const theme = React.useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -116,7 +116,7 @@ function Header() {
                 </label>
               </form>
             </RenameModal>
-            {/* <ThemeToggler /> */}
+            <ThemeToggler />
             {/* <button className="custButton">Log Out</button> */}
           </div>
         </div>

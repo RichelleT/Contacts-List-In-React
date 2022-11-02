@@ -15,11 +15,13 @@ export default function SwitchButton() {
   };
 
   return (
-    <button
-      className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
-      onClick={onClick}
-    >
-      {darkMode ? "Switch to Darj Mode" : "Switch to Light Mode"}
+    <button className="noBg noBorder" onClick={onClick}>
+      <i
+        className={`${
+          darkMode ? "bi bi-moon-stars-fill" : "bi bi-brightness-high-fill"
+        }`}
+        style={{ color: `${darkMode ? "navy" : "orange"}` }}
+      ></i>
     </button>
   );
 }
