@@ -1,15 +1,25 @@
 import { useSelector } from "react-redux";
-import { selectContactById } from "../../redux/contacts/contactSlice";
-import { useNavigate, useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-
+import {
+  selectContactById,
+  //removeContact,
+  //toggleFavourite,
+} from "../../redux/contacts/contactSlice";
+import { useParams } from "react-router-dom";
+//import { Link } from "react-router-dom";
+import { ThemeContext } from "../common/theme/ThemeContext";
 import React from "react";
 import Header from "../common/header/Header";
+import "../../styles/singleContact.css";
 
 export const SingleContactPage = () => {
-  let navigate = useNavigate();
+  //const defImg = require("../../assets/defAvatarImg.png");
+
+  //let navigate = useNavigate();
+  //const dispatch = useDispatch();
   const { contactId } = useParams();
   const contact = useSelector((state) => selectContactById(state, contactId));
+  const theme = React.useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
   if (!contact) {
     return (
@@ -22,17 +32,23 @@ export const SingleContactPage = () => {
     );
   }
 
-  const handleCancel = () => {
-    navigate("/contacts");
-  };
+  // const handleCancel = () => {
+  //   navigate("/contacts");
+  // };
 
   if (contact) {
     return (
       <div>
         <Header />
-        <div className="container noBorder">
+        <div
+          className={`${
+            darkMode
+              ? "container noBorder lightBg"
+              : "container noBorder darkBg"
+          }`}
+        >
           <h2>Contact</h2>
-          <div>
+          {/* <div>
             <p>{contact.name}</p>
             <p>{contact.mobileNum}</p>
             <p>{contact.workNum}</p>
@@ -47,7 +63,7 @@ export const SingleContactPage = () => {
             <button className="btnA" type="button" onClick={handleCancel}>
               Cancel
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     );

@@ -11,7 +11,6 @@ import {
 } from "../../redux/contacts/contactSlice";
 import Jokes from "../jokes/Jokes";
 import { ThemeContext } from "../common/theme/ThemeContext";
-import ThemeToggler from "../common/theme/ThemeToggler";
 
 const ContactsList = () => {
   const defImg = require("../../assets/defAvatarImg.png");
@@ -177,14 +176,20 @@ const ContactsList = () => {
   return (
     <div>
       <Header />
-      <section className={`${darkMode ? "lightBg" : "darkBg"}`}>
+      <section
+        className={`${darkMode ? "lightContBg" : "darkContBg"}`}
+        style={{ overflowX: "hidden" }}
+      >
         <div className="container noBorder">
           <div className="row">
             <div className="col-6">
               <h2>Contacts List</h2>
             </div>
             <div className="col-6 d-flex justify-content-end">
-              <button className="btnA" onClick={() => navigate("/addContact")}>
+              <button
+                className={`${darkMode ? "btnA" : "btnA darkBtnCL"}`}
+                onClick={() => navigate("/addContact")}
+              >
                 <i class="bi bi-plus"></i> Add New Contact&nbsp;
               </button>
             </div>
@@ -193,11 +198,11 @@ const ContactsList = () => {
         <div
           className={`${
             darkMode
-              ? "container noBorder lightBg"
-              : "container noBorder darkBg"
+              ? "container noBorder lightContBg"
+              : "container noBorder darkContBg"
           }`}
         >
-          <div className="row row-cols-1 row-cols-md-5 mt-3">
+          <div className="row row-cols-1 row-cols-md-4 mt-3">
             {renderContacts}
           </div>
           <span className="spanSpace">&nbsp;</span>

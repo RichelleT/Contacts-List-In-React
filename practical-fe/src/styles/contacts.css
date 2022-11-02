@@ -59,15 +59,18 @@
   color: #ffff;
 }
 
-.lightBg {
+.lightContBg {
   background-color: #fefefe;
+  min-height: 100vh;
+  height: 100%;
+  background-repeat: no-repeat;
 }
 
-.darkBg {
+.darkContBg {
   background-color: #102a43;
   color: #d9e2ec;
   min-height: 100vh;
-  max-height: max-content;
+  height: 100%;
   background-repeat: no-repeat;
 }
 
@@ -78,4 +81,8 @@
 .darkCardBg {
   background-color: #243b53;
   color: #9fb3c8 !important;
+}
+
+.darkBtnCL {
+  background-color: #c29dcd;
 }
