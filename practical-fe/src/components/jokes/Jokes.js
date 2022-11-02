@@ -1,13 +1,13 @@
 import * as React from "react";
 import axios from "axios";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import Header from "../common/header/Header";
 
 //export default function Jokes() {
 const Jokes = () => {
   const [fullList, setList] = React.useState([]);
   const [currentJokeIndex, setCurrentJokeIndex] = React.useState(0);
-  const [joke, setJokeLine] = React.useState("");
+  const [jokeSetup, setJokeSetup] = React.useState("");
+  const [jokePunchline, setJokePunchline] = React.useState("");
 
   React.useEffect(() => {
     axios({
@@ -41,37 +41,39 @@ const Jokes = () => {
       fullList[currentJokeIndex].setup.length > 0 &&
       fullList[currentJokeIndex].punchline.length > 0
     ) {
-      const jokeSetup = JSON.stringify(fullList[currentJokeIndex].setup);
-      const jokePunchline = JSON.stringify(
+      const jokeSetupS = JSON.stringify(fullList[currentJokeIndex].setup);
+      const jokePunchlineS = JSON.stringify(
         fullList[currentJokeIndex].punchline
       );
-
-      const conJoke = jokeSetup + jokePunchline;
-      //console.log(conJoke);
-      setJokeLine(conJoke);
+      setJokeSetup(jokeSetupS);
+      setJokePunchline(jokePunchlineS);
     }
-  }, [currentJokeIndex, fullList]);
+  }, [currentJokeIndex, fullList, jokePunchline, jokeSetup]);
 
   return (
+    // <div>
+    //   <Header />
+    //   <div className="container noBorder">
+    //     <h2>Jokes</h2>
+    //     <h2>Shows Full List</h2>
+    //     {fullList.map((listItem) => {
+    //       return (
+    //         <div>
+    //           <p>
+    //             {listItem.setup} {listItem.punchline}
+    //           </p>
+    //         </div>
+    //       );
+    //     })}
+    //     <h2>Test Singular Loop Display</h2>
+    //     <div>
+    //       <p>{joke}</p>
+    //     </div>
+    //   </div>
+    // </div>
     <div>
-      <Header />
-      <div className="container noBorder">
-        <h2>Jokes</h2>
-        <h2>Shows Full List</h2>
-        {fullList.map((listItem) => {
-          return (
-            <div>
-              <p>
-                {listItem.setup} {listItem.punchline}
-              </p>
-            </div>
-          );
-        })}
-        <h2>Test Singular Loop Display</h2>
-        <div>
-          <p>{joke}</p>
-        </div>
-      </div>
+      <p>{jokeSetup}</p>
+      <p>{jokePunchline}</p>
     </div>
   );
 };

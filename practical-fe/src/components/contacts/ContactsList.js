@@ -9,6 +9,7 @@ import {
   selectAllContact,
   toggleFavourite,
 } from "../../redux/contacts/contactSlice";
+import Jokes from "../jokes/Jokes";
 
 const ContactsList = () => {
   const defImg = require("../../assets/defAvatarImg.png");
@@ -171,6 +172,12 @@ const ContactsList = () => {
         </div>
         <div className="container noBorder">
           <div className="row row-cols-1 row-cols-md-4">{renderContacts}</div>
+          <span className="spanSpace">&nbsp;</span>
+        </div>
+      </section>
+      <section>
+        <div className="banner">
+          <Jokes />
         </div>
       </section>
     </div>
