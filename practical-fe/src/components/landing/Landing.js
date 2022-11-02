@@ -2,9 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 // import styles & components
 import "../../styles/landing.css";
+import { ThemeContext } from "../common/theme/ThemeContext";
+import ThemeToggler from "../common/theme/ThemeToggler";
 
 function Landing() {
   let navigate = useNavigate();
+
+  const theme = React.useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
   const [username, setName] = React.useState();
   const [error, setError] = React.useState(false);
@@ -60,13 +65,15 @@ function Landing() {
   };
 
   return (
-    <div className="custBg">
+    <div className={`${darkMode ? "custBg" : "custBgDark"}`}>
       <div className="container pt-auto custMt noBg noBorder">
         <div className="row d-flex">
           <div className="col-4"></div>
           <div className="col-4">
             <div className="card border-primary">
-              <div className="custTitle">Sign In</div>
+              <div className="custTitle">
+                Sign In <ThemeToggler />
+              </div>
               <div className="contBody">
                 <form onSubmit={handleSubmit}>
                   <label>Username</label>
