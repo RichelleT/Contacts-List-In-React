@@ -19,7 +19,8 @@ const contactSlice = createSlice({
         homeNum,
         mainAddress,
         secAddress,
-        favourite
+        favourite,
+        addedTime
       ) {
         return {
           payload: {
@@ -31,6 +32,7 @@ const contactSlice = createSlice({
             mainAddress,
             secAddress,
             favourite: false,
+            addedTime,
           },
         };
       },
