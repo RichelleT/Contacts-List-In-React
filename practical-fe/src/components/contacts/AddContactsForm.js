@@ -55,27 +55,30 @@ export const AddContactsForm = () => {
           />
           <label htmlFor="mobileNum">Mobile Number:</label>
           <input
-            type="text"
+            type="number"
             id="mobileNum"
             name="mobileNum"
             value={mobileNum}
             onChange={onMobileNumChanged}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 15))}
           />
           <label htmlFor="workNum">Work Number:</label>
           <input
-            type="text"
+            type="number"
             id="workNum"
             name="workNum"
             value={workNum}
             onChange={onWorkNumChanged}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 15))}
           />
           <label htmlFor="homeNum">Home Number:</label>
           <input
-            type="text"
+            type="tel"
             id="homeNum"
             name="homeNum"
             value={homeNum}
             onChange={onHomeNumChanged}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 15))}
           />
           <label htmlFor="mainAddress">Main Address:</label>
           <input

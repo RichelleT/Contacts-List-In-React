@@ -56,13 +56,13 @@ const ContactsList = () => {
             <details>
               {contact.workNum.length > 0 && contact.homeNum.length === 0 && (
                 <>
-                  <b>Main Address:</b> <br />
+                  <b>Work Number:</b> <br />
                   {contact.workNum}
                 </>
               )}
               {contact.homeNum.length > 0 && contact.workNum.length === 0 && (
                 <>
-                  <b>Secondary Address:</b> <br />
+                  <b>Home Number:</b> <br />
                   {contact.homeNum}
                 </>
               )}

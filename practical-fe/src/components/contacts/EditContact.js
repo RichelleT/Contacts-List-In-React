@@ -54,6 +54,10 @@ export function EditContact() {
     }
   };
 
+  const handleCancel = () => {
+    navigate("/contacts");
+  };
+
   const canSaveContact = Boolean(name) && Boolean(mobileNum);
 
   return (
@@ -73,7 +77,7 @@ export function EditContact() {
           />
           <label htmlFor="mobileNum">Mobile Number:</label>
           <input
-            type="text"
+            type="number"
             id="mobileNum"
             name="mobileNum"
             onChange={onMobileNumChanged}
@@ -81,7 +85,7 @@ export function EditContact() {
           />
           <label htmlFor="workNum">Work Number:</label>
           <input
-            type="text"
+            type="number"
             id="workNum"
             name="workNum"
             onChange={onWorkNumChanged}
@@ -89,7 +93,7 @@ export function EditContact() {
           />
           <label htmlFor="homeNum">Home Number:</label>
           <input
-            type="text"
+            type="number"
             id="homeNum"
             name="homeNum"
             onChange={onHomeNumChanged}
@@ -117,7 +121,10 @@ export function EditContact() {
             onClick={handleClick}
             disabled={!canSaveContact}
           >
-            Add Contact
+            Edit Contact
+          </button>
+          <button className="btnA" type="button" onClick={handleCancel}>
+            Cancel
           </button>
         </form>
       </div>
