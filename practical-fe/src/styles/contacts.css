@@ -49,3 +49,11 @@
 .spanSpace {
   padding-bottom: 50px;
 }
+
+.lightBg {
+  background-color: #fefefe;
+}
+
+.darkBg {
+  background-color: #121212;
+}

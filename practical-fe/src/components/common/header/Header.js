@@ -69,15 +69,23 @@ function Header() {
 
   return (
     <div>
-      <nav className="navbar">
+      <nav className={`${darkMode ? "navbar lightBg" : "navbar darkBg"}`}>
         <div className="container-fluid">
           <div className="spanLeft">
             <a href="/" style={{ textDecoration: "none" }}>
-              <span className="navbar-brand mb-0 h1">Contacts</span>
+              <span
+                className="navbar-brand mb-0 h1"
+                style={{ color: `${darkMode ? "navy" : "white"}` }}
+              >
+                Contacts
+              </span>
             </a>
             <ThemeToggler />
           </div>
-          <div className="spanRight">
+          <div
+            className="spanRight"
+            style={{ color: `${darkMode ? "navy" : "white"}` }}
+          >
             {!isOpen && <span>Hello, {userName}!&nbsp;</span>}
             {!isOpen && (
               <button className="iconBtn" onClick={() => setIsOpen(true)}>

@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
 import { selectContactById } from "../../redux/contacts/contactSlice";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import React from "react";
 import Header from "../common/header/Header";
 
 export const SingleContactPage = () => {
-  //   let navigate = useNavigate();
+  let navigate = useNavigate();
   const { contactId } = useParams();
   const contact = useSelector((state) => selectContactById(state, contactId));
 
@@ -21,6 +21,10 @@ export const SingleContactPage = () => {
       </div>
     );
   }
+
+  const handleCancel = () => {
+    navigate("/contacts");
+  };
 
   if (contact) {
     return (
@@ -40,6 +44,9 @@ export const SingleContactPage = () => {
             <Link to={`/contact/edit/${contact.id}`}>
               Edit Contact Information
             </Link>
+            <button className="btnA" type="button" onClick={handleCancel}>
+              Cancel
+            </button>
           </div>
         </div>
       </div>

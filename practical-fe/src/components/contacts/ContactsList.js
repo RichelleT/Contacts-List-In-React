@@ -172,7 +172,7 @@ const ContactsList = () => {
     <div>
       <Header />
       <section>
-        <div className="container noBorder">
+        <div className="container noBorder mt-2">
           <div className="row">
             <div className="col-6">
               <h2>Contacts List</h2>
@@ -187,6 +187,7 @@ const ContactsList = () => {
         <div className="container noBorder">
           <div className="row row-cols-1 row-cols-md-4">{renderContacts}</div>
           <span className="spanSpace">&nbsp;</span>
+          {renderContacts.length === 0 && <h5>Currently no contacts added.</h5>}
         </div>
       </section>
       <section>
