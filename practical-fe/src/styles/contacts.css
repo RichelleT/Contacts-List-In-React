@@ -67,8 +67,8 @@
 }
 
 .darkContBg {
-  background-color: #102a43;
-  color: #d9e2ec;
+  background-color: #102a43 !important;
+  color: #d9e2ec !important;
   min-height: 100vh;
   height: 100%;
   background-repeat: no-repeat;

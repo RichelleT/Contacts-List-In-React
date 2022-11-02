@@ -22,6 +22,23 @@
   height: auto;
   max-height: 900px;
   overflow: auto;
+  border-radius: 20px;
+}
+
+.modalStyleDark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #102a43 !important;
+  color: #d9e2ec !important;
+  padding: 20px 20px;
+  z-index: 9999;
+  border: 1px solid black;
+  height: auto;
+  max-height: 900px;
+  overflow: auto;
+  border-radius: 20px;
 }
 
 .closeBtn {

@@ -122,7 +122,10 @@ function Header() {
                   )}
                   <br />
                   <br />
-                  <button type="submit" className="updBtn">
+                  <button
+                    type="submit"
+                    className={`${darkMode ? "btnA" : "btnA darkBtnCL"}`}
+                  >
                     Update Name
                   </button>{" "}
                   <br />

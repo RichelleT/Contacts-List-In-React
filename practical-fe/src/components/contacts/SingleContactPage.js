@@ -179,7 +179,7 @@ export const SingleContactPage = () => {
               </div>
             </div>
             <button
-              className={`${darkMode ? "btnA" : "darkBtnOC"}`}
+              className={`${darkMode ? "noBorder" : "darkBtnOC"}`}
               onClick={backToCL}
             >
               Return to contacts list
