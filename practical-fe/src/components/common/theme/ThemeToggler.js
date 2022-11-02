@@ -1,6 +1,5 @@
 import * as React from "react";
 import { ThemeContext } from "./ThemeContext";
-import "./themes.css";
 
 export default function SwitchButton() {
   const theme = React.useContext(ThemeContext);
