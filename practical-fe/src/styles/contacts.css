@@ -15,21 +15,11 @@
   border: none;
 }
 
-.circleImg {
-  border-radius: 50%;
-  border: 1px solid;
-  display: inline-block;
-  height: 100px;
-  width: 100px;
-  line-height: 0;
-  margin: 5px;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-
 .circleImgSrc {
   border-radius: 50%;
+  background-color: #102a43;
+  width: 60px;
+  height: 60px;
 }
 
 .banner {

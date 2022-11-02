@@ -41,12 +41,8 @@ const ContactsList = () => {
             }`}
           >
             <div className="row d-flex align-items-stretch">
-              <div className="col-4 circleImgSrc">
-                <img
-                  src={defImg}
-                  style={{ width: 56, height: 56 }}
-                  alt="None"
-                ></img>
+              <div className="col-4">
+                <img src={defImg} className="circleImgSrc" alt="None"></img>
               </div>
               <div className="col-8">
                 <h5 className="card-title">{contact.name}</h5>
