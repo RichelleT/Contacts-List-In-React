@@ -19,7 +19,7 @@ const Jokes = () => {
     });
   }, []);
 
-  //console.log(fullList);
+  console.log(fullList);
 
   React.useEffect(() => {
     if (fullList.length > 0) {
@@ -45,35 +45,21 @@ const Jokes = () => {
       const jokePunchlineS = JSON.stringify(
         fullList[currentJokeIndex].punchline
       );
+
       setJokeSetup(jokeSetupS);
       setJokePunchline(jokePunchlineS);
     }
   }, [currentJokeIndex, fullList, jokePunchline, jokeSetup]);
 
+  var nqSetup = jokeSetup.split('"').join("");
+  var nqPunchline = jokePunchline.split('"').join("");
+
   return (
-    // <div>
-    //   <Header />
-    //   <div className="container noBorder">
-    //     <h2>Jokes</h2>
-    //     <h2>Shows Full List</h2>
-    //     {fullList.map((listItem) => {
-    //       return (
-    //         <div>
-    //           <p>
-    //             {listItem.setup} {listItem.punchline}
-    //           </p>
-    //         </div>
-    //       );
-    //     })}
-    //     <h2>Test Singular Loop Display</h2>
-    //     <div>
-    //       <p>{joke}</p>
-    //     </div>
-    //   </div>
-    // </div>
     <div>
-      <p>{jokeSetup}</p>
-      <p>{jokePunchline}</p>
+      <p>
+        {nqSetup} <br />
+        {nqPunchline}
+      </p>
     </div>
   );
 };
