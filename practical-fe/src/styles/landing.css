@@ -108,5 +108,5 @@ text {
 }
 
 .noBg {
-  background: none;
+  background: none !important;
 }

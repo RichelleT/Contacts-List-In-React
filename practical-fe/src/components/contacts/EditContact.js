@@ -6,10 +6,14 @@ import {
   selectContactById,
   updateContact,
 } from "../../redux/contacts/contactSlice";
+import { ThemeContext } from "../common/theme/ThemeContext";
 
 export function EditContact() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const theme = React.useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
+
   const { contactId } = useParams();
   const contacts = useSelector((state) => selectContactById(state, contactId));
   // eslint-disable-next-line
@@ -63,79 +67,107 @@ export function EditContact() {
   return (
     <div>
       <Header />
-      <div className="container noBorder">
-        <h2>Edit Contact</h2>
-
-        <form onSubmit={(event) => event.preventDefault()}>
-          <label htmlFor="contactName">Contact Name:</label>
-          <input
-            type="text"
-            id="contactName"
-            name="contactName"
-            onChange={onNameChanged}
-            value={name || contacts.name}
-            onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
-            required
-          />
-          <label htmlFor="mobileNum">Mobile Number:</label>
-          <input
-            type="number"
-            id="mobileNum"
-            name="mobileNum"
-            onChange={onMobileNumChanged}
-            value={mobileNum || contacts.mobileNum}
-            onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
-            required
-          />
-          <label htmlFor="workNum">Work Number:</label>
-          <input
-            type="number"
-            id="workNum"
-            name="workNum"
-            onChange={onWorkNumChanged}
-            value={workNum || contacts.workNum}
-            onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
-          />
-          <label htmlFor="homeNum">Home Number:</label>
-          <input
-            type="number"
-            id="homeNum"
-            name="homeNum"
-            onChange={onHomeNumChanged}
-            value={homeNum || contacts.homeNum}
-            onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
-          />
-          <label htmlFor="mainAddress">Main Address:</label>
-          <input
-            type="text"
-            id="mainAddress"
-            name="mainAddress"
-            onChange={onMainAddressChanged}
-            value={mainAddress || contacts.mainAddress}
-            onInput={(e) => (e.target.value = e.target.value.slice(0, 30))}
-          />
-          <label htmlFor="secAddress">Secondary/Optional Address:</label>
-          <input
-            type="text"
-            id="secAddress"
-            name="secAddress"
-            onChange={onSecAddressChanged}
-            value={secAddress || contacts.secAddress}
-            onInput={(e) => (e.target.value = e.target.value.slice(0, 30))}
-          />
-          <button
-            className="btnA"
-            type="button"
-            onClick={handleClick}
-            disabled={!canSaveContact}
+      <section className={`${darkMode ? "lightContBg" : "darkContBg"}`}>
+        <div className="container noBorder">
+          <h3>Add New Contact</h3>
+          <div
+            className={`${
+              darkMode
+                ? "card w-50 mx-auto lightCardBg"
+                : "card w-50 mx-auto darkCardBg"
+            }`}
           >
-            Edit Contact
-          </button>
-          <button className="btnA" type="button" onClick={handleCancel}>
-            Cancel
-          </button>
-        </form>
-      </div>
+            <form
+              className="my-4 mx-5"
+              onSubmit={(event) => event.preventDefault()}
+            >
+              <label htmlFor="contactName">Contact Name:</label>
+              <input
+                type="text"
+                id="contactName"
+                name="contactName"
+                onChange={onNameChanged}
+                value={name || contacts.name}
+                onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
+                required
+              />
+              <br />
+              <br />
+              <label htmlFor="mobileNum">Mobile Number:</label>
+              <input
+                type="number"
+                id="mobileNum"
+                name="mobileNum"
+                onChange={onMobileNumChanged}
+                value={mobileNum || contacts.mobileNum}
+                onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
+                required
+              />
+              <br />
+              <br />
+              <label htmlFor="workNum">Work Number:</label>
+              <input
+                type="number"
+                id="workNum"
+                name="workNum"
+                onChange={onWorkNumChanged}
+                value={workNum || contacts.workNum}
+                onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
+              />
+              <br />
+              <br />
+              <label htmlFor="homeNum">Home Number:</label>
+              <input
+                type="number"
+                id="homeNum"
+                name="homeNum"
+                onChange={onHomeNumChanged}
+                value={homeNum || contacts.homeNum}
+                onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
+              />
+              <br />
+              <br />
+              <label htmlFor="mainAddress">Main Address:</label>
+              <input
+                type="text"
+                id="mainAddress"
+                name="mainAddress"
+                onChange={onMainAddressChanged}
+                value={mainAddress || contacts.mainAddress}
+                onInput={(e) => (e.target.value = e.target.value.slice(0, 30))}
+              />
+              <br />
+              <br />
+              <label htmlFor="secAddress">Secondary/Optional Address:</label>
+              <input
+                type="text"
+                id="secAddress"
+                name="secAddress"
+                onChange={onSecAddressChanged}
+                value={secAddress || contacts.secAddress}
+                onInput={(e) => (e.target.value = e.target.value.slice(0, 30))}
+              />
+              <br />
+              <br />
+              <button
+                className="btn btn-primary m-3"
+                type="button"
+                onClick={handleClick}
+                disabled={!canSaveContact}
+              >
+                Edit Contact
+              </button>
+              <button
+                className="btn btn-danger"
+                type="button"
+                onClick={handleCancel}
+              >
+                Cancel
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

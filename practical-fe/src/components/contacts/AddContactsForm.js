@@ -59,7 +59,7 @@ export const AddContactsForm = () => {
                 : "card w-50 mx-auto darkCardBg"
             }`}
           >
-            <form className="my-3 mx-3">
+            <form className="my-4 mx-5">
               <label htmlFor="contactName">Contact Name:</label>
               <input
                 type="text"
