@@ -35,7 +35,7 @@ const ContactsList = () => {
       <div className="col-3 mb-5">
         <div className="card w-100">
           <div className="card-body">
-            <div className="row">
+            <div className="row d-flex align-items-stretch">
               <div className="col-4 circleImgSrc">
                 <img
                   src={defImg}
@@ -45,27 +45,21 @@ const ContactsList = () => {
               </div>
               <div className="col-8">
                 <h5 className="card-title">{contact.name}</h5>
-                {contact.mobileNum.length > 0 && (
-                  <p className="card-text">
-                    Mobile Number:
-                    <br />
-                    {contact.mobileNum}
-                  </p>
-                )}
-                {contact.workNum.length > 0 && (
-                  <p className="card-text">
-                    Work Number:
-                    <br />
-                    {contact.workNum}
-                  </p>
-                )}
-                {contact.homeNum.length > 0 && (
-                  <p className="card-text">
-                    Home Number:
-                    <br />
-                    {contact.homeNum}
-                  </p>
-                )}
+                <p className="card-text">
+                  Mobile Number:
+                  <br />
+                  {contact.mobileNum}
+                </p>
+                <p className="card-text">
+                  Work Number:
+                  <br />
+                  {contact.workNum || "None Added"}
+                </p>
+                <p className="card-text">
+                  Home Number:
+                  <br />
+                  {contact.homeNum || "None Added"}
+                </p>
               </div>
             </div>
             <hr />
