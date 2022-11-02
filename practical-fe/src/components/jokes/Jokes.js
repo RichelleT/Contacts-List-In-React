@@ -1,24 +1,33 @@
 import * as React from "react";
 import axios from "axios";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import Spinner from "../common/spinner/Spinner";
 
-//export default function Jokes() {
 const Jokes = () => {
   const [fullList, setList] = React.useState([]);
   const [currentJokeIndex, setCurrentJokeIndex] = React.useState(0);
   const [jokeSetup, setJokeSetup] = React.useState("");
   const [jokePunchline, setJokePunchline] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState("");
 
   React.useEffect(() => {
+    setIsLoading("loading");
     axios({
       method: "get",
       url: "https://official-joke-api.appspot.com/jokes/ten",
-    }).then(function (response) {
-      const result = response.data;
-      setList(result);
-    });
+    })
+      .then(function (response) {
+        const result = response.data;
+        setList(result);
+        setIsLoading("success");
+      })
+      .catch(function (response) {
+        console.log("error");
+        setIsLoading("loading");
+      });
   }, []);
 
+  //console.log(isLoading);
   //console.log(fullList);
 
   React.useEffect(() => {
@@ -56,10 +65,18 @@ const Jokes = () => {
 
   return (
     <div>
-      <p>
-        {nqSetup} <br />
-        {nqPunchline}
-      </p>
+      {isLoading === "loading" ? (
+        <>
+          <div className="justCent">
+            <Spinner />
+          </div>
+        </>
+      ) : (
+        <p>
+          {nqSetup} <br />
+          {nqPunchline}
+        </p>
+      )}
     </div>
   );
 };
