@@ -79,10 +79,20 @@
 }
 
 .darkCardBg {
-  background-color: #243b53;
+  background-color: #243b53 !important;
   color: #9fb3c8 !important;
 }
 
 .darkBtnCL {
   background-color: #c29dcd;
+}
+
+.darkBtnOC {
+  background-color: #9aa5b1;
+  color: #243b53 !important;
+}
+
+.justCent {
+  display: flex !important;
+  justify-content: center !important;
 }

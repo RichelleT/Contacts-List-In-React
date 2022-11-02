@@ -122,7 +122,7 @@ const ContactsList = () => {
             </details>
             <hr />
             <div className="row d-flex align-items-center justify-content-between">
-              <div className="col-3">
+              <div className="col-3 justCent">
                 <button className="iconBtn">
                   <i
                     className={`switch ${
@@ -136,7 +136,7 @@ const ContactsList = () => {
                   ></i>
                 </button>
               </div>
-              <div className="col-3">
+              <div className="col-3 justCent">
                 <Link to={`/contact/${contact.id}`}>
                   <i
                     className="bi bi-eye"
@@ -144,7 +144,7 @@ const ContactsList = () => {
                   ></i>
                 </Link>
               </div>
-              <div className="col-3">
+              <div className="col-3 justCent">
                 <button
                   className="iconBtn"
                   onClick={() => {
@@ -158,7 +158,7 @@ const ContactsList = () => {
                   ></i>
                 </button>
               </div>
-              <div className="col-3">
+              <div className="col-3 justCent">
                 <Link to={`/contact/edit/${contact.id}`}>
                   <i
                     className="bi bi-three-dots"
