@@ -185,23 +185,6 @@ export const SingleContactPage = () => {
               Return to contacts list
             </button>
           </div>
-
-          {/* <div>
-            <p>{contact.name}</p>
-            <p>{contact.mobileNum}</p>
-            <p>{contact.workNum}</p>
-            <p>{contact.homeNum}</p>
-            <p>{contact.mainAddress}</p>
-            <p>{contact.secAddress}</p>
-          </div>
-          <div>
-            <Link to={`/contact/edit/${contact.id}`}>
-              Edit Contact Information
-            </Link>
-            <button className="btnA" type="button" onClick={handleCancel}>
-              Cancel
-            </button>
-          </div> */}
         </div>
       </section>
     );
