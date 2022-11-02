@@ -20,7 +20,7 @@ const Jokes = () => {
     });
   }, []);
 
-  console.log(fullList);
+  //console.log(fullList);
 
   React.useEffect(() => {
     if (fullList.length > 0) {
@@ -34,25 +34,24 @@ const Jokes = () => {
     }
   }, [currentJokeIndex, fullList]);
 
-  console.log(fullList[currentJokeIndex]);
+  //console.log(fullList[currentJokeIndex]);
 
   React.useEffect(() => {
-    if (fullList.length > 0 && fullList[currentJokeIndex].length > 0) {
+    if (
+      fullList.length > 0 &&
+      fullList[currentJokeIndex].setup.length > 0 &&
+      fullList[currentJokeIndex].punchline.length > 0
+    ) {
       const jokeSetup = JSON.stringify(fullList[currentJokeIndex].setup);
       const jokePunchline = JSON.stringify(
         fullList[currentJokeIndex].punchline
       );
 
       const conJoke = jokeSetup + jokePunchline;
-      console.log(conJoke);
+      //console.log(conJoke);
       setJokeLine(conJoke);
-    } else {
-      console.log("Error");
     }
   }, [currentJokeIndex, fullList]);
-
-  //const oneJoke =
-  //fullList[currentJokeIndex].setup + fullList[currentJokeIndex].punchline;
 
   return (
     <div>
@@ -70,7 +69,9 @@ const Jokes = () => {
           );
         })}
         <h2>Test Singular Loop Display</h2>
-        <div>{/* <p>{oneJoke}</p> */}</div>
+        <div>
+          <p>{joke}</p>
+        </div>
       </div>
     </div>
   );

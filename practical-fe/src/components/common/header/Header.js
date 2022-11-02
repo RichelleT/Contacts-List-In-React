@@ -8,13 +8,10 @@ function Header() {
   // const theme = React.useContext(ThemeContext);
   // const darkMode = theme.state.darkMode;
 
-  //modal
   const [isOpen, setIsOpen] = React.useState(false);
 
-  //get username
   let userName = localStorage.getItem("username");
 
-  //update name
   const [username, setNewName] = React.useState(userName);
 
   const handleSubmit = (event) => {
@@ -22,7 +19,6 @@ function Header() {
     setIsOpen(false);
   };
 
-  //update name validation
   const [error, setError] = React.useState(false);
   const [showErrorText, setShowErrorText] = React.useState(false);
   const ref = React.useRef();
@@ -120,7 +116,6 @@ function Header() {
                 </label>
               </form>
             </RenameModal>
-            {/* <span>Hello, user.</span> */}
             {/* <ThemeToggler /> */}
             {/* <button className="custButton">Log Out</button> */}
           </div>
