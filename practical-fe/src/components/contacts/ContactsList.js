@@ -46,22 +46,42 @@ const ContactsList = () => {
               <div className="col-8">
                 <h5 className="card-title">{contact.name}</h5>
                 <p className="card-text">
-                  Mobile Number:
+                  <b>Mobile Number:</b>
                   <br />
                   {contact.mobileNum}
                 </p>
-                <p className="card-text">
-                  Work Number:
-                  <br />
-                  {contact.workNum || "None Added"}
-                </p>
-                <p className="card-text">
-                  Home Number:
-                  <br />
-                  {contact.homeNum || "None Added"}
-                </p>
               </div>
             </div>
+            <hr />
+            <details>
+              {contact.workNum.length > 0 && contact.homeNum.length === 0 && (
+                <>
+                  <b>Main Address:</b> <br />
+                  {contact.workNum}
+                </>
+              )}
+              {contact.homeNum.length > 0 && contact.workNum.length === 0 && (
+                <>
+                  <b>Secondary Address:</b> <br />
+                  {contact.homeNum}
+                </>
+              )}
+              {contact.homeNum.length === 0 && contact.workNum.length === 0 && (
+                <>
+                  <b>No Additional Numbers Added</b> <br />
+                </>
+              )}
+              {contact.workNum.length > 0 && contact.homeNum.length > 0 && (
+                <>
+                  <b>Work Number:</b> <br />
+                  {contact.workNum}
+                  <br />
+                  <b>Home Number:</b> <br />
+                  {contact.homeNum}
+                </>
+              )}
+              <summary>Other Numbers</summary>
+            </details>
             <hr />
             <details>
               {contact.mainAddress.length > 0 &&
