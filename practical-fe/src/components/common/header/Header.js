@@ -75,6 +75,7 @@ function Header() {
             <a href="/" style={{ textDecoration: "none" }}>
               <span className="navbar-brand mb-0 h1">Contacts</span>
             </a>
+            <ThemeToggler />
           </div>
           <div className="spanRight">
             {!isOpen && <span>Hello, {userName}!&nbsp;</span>}
@@ -116,8 +117,6 @@ function Header() {
                 </label>
               </form>
             </RenameModal>
-            <ThemeToggler />
-            {/* <button className="custButton">Log Out</button> */}
           </div>
         </div>
       </nav>
