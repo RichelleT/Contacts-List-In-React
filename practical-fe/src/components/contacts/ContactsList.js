@@ -32,7 +32,7 @@ const ContactsList = () => {
 
   const renderContacts = lsContactArray.map((contact) => (
     <>
-      <div className="col-3 mt-5">
+      <div className="col-3 mb-5">
         <div className="card w-100">
           <div className="card-body">
             <div className="row">
