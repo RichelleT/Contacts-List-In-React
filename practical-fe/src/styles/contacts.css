@@ -47,7 +47,16 @@
 }
 
 .spanSpace {
-  padding-bottom: 50px;
+  padding-bottom: 80px;
+}
+
+.lightHeaderBg {
+  background-color: #fefefe;
+}
+
+.darkHeaderBg {
+  background-color: #102a43;
+  color: #ffff;
 }
 
 .lightBg {
@@ -55,5 +64,18 @@
 }
 
 .darkBg {
-  background-color: #121212;
+  background-color: #102a43;
+  color: #d9e2ec;
+  min-height: 100vh;
+  max-height: max-content;
+  background-repeat: no-repeat;
+}
+
+.lightCardBg {
+  background-color: #fefefe;
+}
+
+.darkCardBg {
+  background-color: #243b53;
+  color: #9fb3c8 !important;
 }

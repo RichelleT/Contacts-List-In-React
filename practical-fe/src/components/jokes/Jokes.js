@@ -19,7 +19,7 @@ const Jokes = () => {
     });
   }, []);
 
-  console.log(fullList);
+  //console.log(fullList);
 
   React.useEffect(() => {
     if (fullList.length > 0) {

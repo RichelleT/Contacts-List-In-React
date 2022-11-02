@@ -62,7 +62,7 @@ export const AddContactsForm = () => {
             name="mobileNum"
             value={mobileNum}
             onChange={onMobileNumChanged}
-            onInput={(e) => (e.target.value = e.target.value.slice(0, 15))}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
             required
           />
           <label htmlFor="workNum">Work Number:</label>
@@ -72,7 +72,7 @@ export const AddContactsForm = () => {
             name="workNum"
             value={workNum}
             onChange={onWorkNumChanged}
-            onInput={(e) => (e.target.value = e.target.value.slice(0, 15))}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
           />
           <label htmlFor="homeNum">Home Number:</label>
           <input
@@ -81,7 +81,7 @@ export const AddContactsForm = () => {
             name="homeNum"
             value={homeNum}
             onChange={onHomeNumChanged}
-            onInput={(e) => (e.target.value = e.target.value.slice(0, 15))}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
           />
           <label htmlFor="mainAddress">Main Address:</label>
           <input

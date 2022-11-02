@@ -74,6 +74,8 @@ export function EditContact() {
             name="contactName"
             onChange={onNameChanged}
             value={name || contacts.name}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
+            required
           />
           <label htmlFor="mobileNum">Mobile Number:</label>
           <input
@@ -82,6 +84,8 @@ export function EditContact() {
             name="mobileNum"
             onChange={onMobileNumChanged}
             value={mobileNum || contacts.mobileNum}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
+            required
           />
           <label htmlFor="workNum">Work Number:</label>
           <input
@@ -90,6 +94,7 @@ export function EditContact() {
             name="workNum"
             onChange={onWorkNumChanged}
             value={workNum || contacts.workNum}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
           />
           <label htmlFor="homeNum">Home Number:</label>
           <input
@@ -98,6 +103,7 @@ export function EditContact() {
             name="homeNum"
             onChange={onHomeNumChanged}
             value={homeNum || contacts.homeNum}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 12))}
           />
           <label htmlFor="mainAddress">Main Address:</label>
           <input
@@ -106,6 +112,7 @@ export function EditContact() {
             name="mainAddress"
             onChange={onMainAddressChanged}
             value={mainAddress || contacts.mainAddress}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 30))}
           />
           <label htmlFor="secAddress">Secondary/Optional Address:</label>
           <input
@@ -114,6 +121,7 @@ export function EditContact() {
             name="secAddress"
             onChange={onSecAddressChanged}
             value={secAddress || contacts.secAddress}
+            onInput={(e) => (e.target.value = e.target.value.slice(0, 30))}
           />
           <button
             className="btnA"

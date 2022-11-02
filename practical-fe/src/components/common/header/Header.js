@@ -69,7 +69,11 @@ function Header() {
 
   return (
     <div>
-      <nav className={`${darkMode ? "navbar lightBg" : "navbar darkBg"}`}>
+      <nav
+        className={`${
+          darkMode ? "navbar lightHeaderBg" : "navbar darkHeaderBg"
+        }`}
+      >
         <div className="container-fluid">
           <div className="spanLeft">
             <a href="/" style={{ textDecoration: "none" }}>

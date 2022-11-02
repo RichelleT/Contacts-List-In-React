@@ -10,6 +10,8 @@ import {
   toggleFavourite,
 } from "../../redux/contacts/contactSlice";
 import Jokes from "../jokes/Jokes";
+import { ThemeContext } from "../common/theme/ThemeContext";
+import ThemeToggler from "../common/theme/ThemeToggler";
 
 const ContactsList = () => {
   const defImg = require("../../assets/defAvatarImg.png");
@@ -17,13 +19,13 @@ const ContactsList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectAllContact);
   const [lsContactArray, setLsContactArray] = React.useState([]);
+  const theme = React.useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
   React.useEffect(() => {
     localStorage.setItem("lscontacts", JSON.stringify(contacts));
     setLsContactArray(JSON.parse(localStorage.getItem("lscontacts")));
   }, [contacts]);
-
-  // console.log(lsContactArray);
 
   // eslint-disable-next-line
   var sortByFavourite = lsContactArray.sort(function (a, b) {
@@ -32,9 +34,13 @@ const ContactsList = () => {
 
   const renderContacts = lsContactArray.map((contact) => (
     <>
-      <div className="col-3 mb-5">
+      <div className="col-3 mb-4">
         <div className="card w-100">
-          <div className="card-body">
+          <div
+            className={`${
+              darkMode ? "card-body lightCardBg" : "card-body darkCardBg"
+            }`}
+          >
             <div className="row d-flex align-items-stretch">
               <div className="col-4 circleImgSrc">
                 <img
@@ -171,8 +177,8 @@ const ContactsList = () => {
   return (
     <div>
       <Header />
-      <section>
-        <div className="container noBorder mt-2">
+      <section className={`${darkMode ? "lightBg" : "darkBg"}`}>
+        <div className="container noBorder">
           <div className="row">
             <div className="col-6">
               <h2>Contacts List</h2>
@@ -184,14 +190,24 @@ const ContactsList = () => {
             </div>
           </div>
         </div>
-        <div className="container noBorder">
-          <div className="row row-cols-1 row-cols-md-4">{renderContacts}</div>
+        <div
+          className={`${
+            darkMode
+              ? "container noBorder lightBg"
+              : "container noBorder darkBg"
+          }`}
+        >
+          <div className="row row-cols-1 row-cols-md-5 mt-3">
+            {renderContacts}
+          </div>
           <span className="spanSpace">&nbsp;</span>
           {renderContacts.length === 0 && <h5>Currently no contacts added.</h5>}
         </div>
       </section>
       <section>
-        <div className="banner">
+        <div
+          className={`${darkMode ? "banner lightCardBg" : "banner darkCardBg"}`}
+        >
           <Jokes />
         </div>
       </section>
